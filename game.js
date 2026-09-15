@@ -115,21 +115,21 @@ PC.intro = {
     "<em>Presque.</em>",
     "Sur la table du salon vous attend un dossier que personne ne semble vouloir ouvrir.",
     "<strong>DOSSIER CARREAU</strong>",
-    "— Affaire non résolue.<br>— Victime présumée : Béatrice CARREAU<br>— Dernier employé connu : Firmin, le valet des CARREAU",
+    "— Affaire non résolue.<br>— Victime présumée : Béatrice DE CARREAU<br>— Dernier employé connu : Firmin, le valet des DE CARREAU",
     "<em>« Si vous lisez ceci, c'est que quelqu'un, quelque part, pense encore que cette affaire mérite d'être résolue. »</em>",
   ],
   obj:"PREMIÈRE MISSION — Retrouvez Firmin, le Valet de la famille. Il est quelque part dans cette pièce !",
   mj:null
 };
 PC.firmin_intro = {
-  title:'Firmin, Valet des CARREAU',
+  title:'Firmin, Valet des DE CARREAU',
   lines:["Firmin vous regarde. Il attend."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Ah ! Vous voilà enfin.",
-    "Je suis Firmin, le valet des CARREAU.",
+    "Je suis Firmin, le valet des DE CARREAU.",
     "---",
-    "Vous savez, Dame CARREAU était beaucoup plus intelligente que Monsieur.",
+    "Vous savez, Dame DE CARREAU était beaucoup plus intelligente que Monsieur.",
     "Monsieur était persuadé du contraire.",
     "C'était assez amusant.",
     "Enfin, pour Madame. Pas pour Monsieur.",
@@ -144,7 +144,7 @@ PC.firmin_intro = {
 PC.find_kd = {
   title:'Prochaine mission',
   lines:["Firmin vous a glissé un regard complice. Il sait quelque chose..."],
-  obj:"PROCHAINE MISSION — Retrouvez les affaires du Roi de Carreau !",
+  obj:"PROCHAINE MISSION — Retrouvez les affaires du Monsieur DE CARREAU !",
   mj:null
 };
 PC.armand_reveal = {
@@ -177,7 +177,7 @@ PC.firmin_testimony = {
   lines:["Firmin soupèse l'argent dans sa main. Il vous regarde. Il se décide."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'\uD83E\uDDD1\u200D\uD83C\uDF73',lines:[
-    "Béatrice savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
+    "Mme. Béatrice DE CARREAU savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
     "Il y a des années, Armand a détourné l'argent d'une succession. La mère de Béatrice était l'héritière.",
     "Béatrice a découvert les documents il y a six mois. Elle le faisait chanter, discrètement.","---",
     "Mais ce soir… je crois qu'il en a eu assez.",
