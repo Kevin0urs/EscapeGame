@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-manor: #181615;
+  --bg-card: #24211e;
+  --bg-paper: #f4efe4;
+  --text-dark: #1f1c19;
+  --text-light: #e8e2d5;
+  --text-muted: #8c8376;
+  --accent-red: #9e2a2b;
+  --accent-red-hover: #b83234;
+  --accent-gold: #c59b27;
+  --border-gold: #8f7223;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-manor);
+  color: var(--text-light);
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Serif headers for mystery atmosphere */
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Cinzel', Georgia, serif;
+  letter-spacing: 0.03em;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { border-color: var(--accent-gold); box-shadow: 0 0 8px rgba(197, 155, 39, 0.3); }
+  50% { border-color: #f1d372; box-shadow: 0 0 16px rgba(197, 155, 39, 0.6); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 2s infinite;
+}
+
+/* Card suit styling */
+.suit-red {
+  color: #d63031;
+}
+.suit-black {
+  color: #2d3436;
+}
+
+/* Paper card styling for modals & story documents */
+.paper-doc {
+  background-color: var(--bg-paper);
+  color: var(--text-dark);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  border: 1px solid #d3ccbb;
+}
