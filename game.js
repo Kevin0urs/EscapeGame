@@ -110,13 +110,11 @@ const SETUP = [
 PC.intro = {
   title:'Dossier Carreau',
   lines:[
-    "Vous arrivez dans un ancien manoir une soirée de septembre, alors que la nuit commence déjà à tomber.",
+    "Vous arrivez dans un ancien manoir alors que la nuit commence déjà à tomber.",
     "Une soirée calme, fraîche, presque ordinaire.",
-    "<em>Presque.</em>",
     "Sur la table du salon vous attend un dossier que personne ne semble vouloir ouvrir.",
     "<strong>DOSSIER CARREAU</strong>",
     "— Affaire non résolue.<br>— Victime présumée : Béatrice DE CARREAU<br>— Dernier employé connu : Firmin, le valet des DE CARREAU",
-    "<em>« Si vous lisez ceci, c'est que quelqu'un, quelque part, pense encore que cette affaire mérite d'être résolue. »</em>",
   ],
   obj:"PREMIÈRE MISSION — Retrouvez Firmin, le Valet de la famille. Il est quelque part dans cette pièce !",
   mj:null
