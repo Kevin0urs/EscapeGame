@@ -115,21 +115,21 @@ PC.intro = {
     "<em>Presque.</em>",
     "Sur la table du salon vous attend un dossier que personne ne semble vouloir ouvrir.",
     "<strong>DOSSIER CARREAU</strong>",
-    "— Affaire non résolue.<br>— Victime présumée : Béatrice de Carreau<br>— Dernier employé connu : Firmin, le valet des Carreau",
+    "— Affaire non résolue.<br>— Victime présumée : Béatrice CARREAU<br>— Dernier employé connu : Firmin, le valet des CARREAU",
     "<em>« Si vous lisez ceci, c'est que quelqu'un, quelque part, pense encore que cette affaire mérite d'être résolue. »</em>",
   ],
   obj:"PREMIÈRE MISSION — Retrouvez Firmin, le Valet de la famille. Il est quelque part dans cette pièce !",
   mj:null
 };
 PC.firmin_intro = {
-  title:'Firmin, Valet des Carreau',
-  lines:["La carte porte la gravure d'un valet de carreau. Firmin vous regarde. Il attend."],
+  title:'Firmin, Valet des CARREAU',
+  lines:["Firmin vous regarde. Il attend."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Ah ! Vous voilà enfin.",
-    "Je suis Firmin, le valet des Carreau.",
+    "Je suis Firmin, le valet des CARREAU.",
     "---",
-    "Vous savez, Dame Carreau était beaucoup plus intelligente que Monsieur.",
+    "Vous savez, Dame CARREAU était beaucoup plus intelligente que Monsieur.",
     "Monsieur était persuadé du contraire.",
     "C'était assez amusant.",
     "Enfin, pour Madame. Pas pour Monsieur.",
@@ -143,16 +143,16 @@ PC.firmin_intro = {
 };
 PC.find_kd = {
   title:'Prochaine mission',
-  lines:["Firmin vous glisse un regard complice. Il sait quelque chose."],
+  lines:["Firmin vous a glissé un regard complice. Il sait quelque chose..."],
   obj:"PROCHAINE MISSION — Retrouvez les affaires du Roi de Carreau !",
   mj:null
 };
 PC.armand_reveal = {
-  title:'Armand de Carreau',
-  lines:["Avec le Roi de Carreau, un billet plié. Armand semble avoir quelque chose à dire."],
+  title:'Armand DE CARREAU',
+  lines:["Armand semble avoir quelque chose à dire."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Armand',emoji:'🎩',lines:[
-    "Ah… Vous avez trouvé ses deux trèfles.",
+    "Ah… Vous avez trouvé les deux trèfles de Madame.",
     "Enfin… MES deux trèfles, je veux dire.",
     "Je… ne pensais pas que quelqu'un regarderait ici.",
     "---",
@@ -162,22 +162,22 @@ PC.armand_reveal = {
 };
 PC.currency_puzzle = {
   title:"L'argent caché",
-  lines:["En fouillant, vous allez peut-être tomber sur des petits tas de sous dissimulés dans des endroits incongrus !"],
+  lines:["En fouillant, vous allez peut-être tomber sur des sous dissimulés dans des endroits incongrus !"],
   obj:"Avez-vous trouvé de l'argent dans la maison ?",
   mj:null
 };
 PC.find_clubs = {
   title:'Les trèfles de la maison',
-  lines:["Ces pièces à trèfle sont la monnaie que Firmin accepte. Son témoignage a un prix.","Continuez à chercher dans toute la maison."],
+  lines:["Ces trèfles sont la monnaie que Firmin accepte. Son témoignage a un prix.","Continuez à chercher dans toute la maison."],
   obj:'Rassemblez des trèfles, puis payez Firmin pour son témoignage.',
   mj:null
 };
 PC.firmin_testimony = {
   title:'Ce que sait Firmin',
-  lines:["Firmin soupèse les pièces dans sa main. Il vous regarde. Il se décide."],
+  lines:["Firmin soupèse l'argent dans sa main. Il vous regarde. Il se décide."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'\uD83E\uDDD1\u200D\uD83C\uDF73',lines:[
-    "Béatrice savait des choses sur M. Armand. Des choses qu'il voulait tenir secrètes.","---",
+    "Béatrice savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
     "Il y a des années, Armand a détourné l'argent d'une succession. La mère de Béatrice était l'héritière.",
     "Béatrice a découvert les documents il y a six mois. Elle le faisait chanter, discrètement.","---",
     "Mais ce soir… je crois qu'il en a eu assez.",
