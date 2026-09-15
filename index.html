@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#1C1C1A"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="description" content="LE DERNIER SERVICE — Une enquête de Béatrice de Carreau"/>
+  <title>LE DERNIER SERVICE</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="app">
+
+  <!-- ========== ÉCRAN ACCUEIL ========== -->
+  <div id="home" class="screen">
+    <div class="home-suits">
+      <span>&#9830;</span><span>&#9829;</span><span>&#9824;</span><span>&#9827;</span>
+    </div>
+    <div>
+      <h1 class="home-title">LE DERNIER<br/>SERVICE</h1>
+      <p class="home-subtitle">Une enquête de Béatrice de Carreau</p>
+    </div>
+    <div class="home-btns">
+      <button id="resume-btn" class="btn btn-gold" onclick="resumeGame()" style="display:none">
+        Reprendre l'enquête
+      </button>
+      <button class="btn btn-dark" onclick="startNew()">
+        Commencer l'enquête
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== ÉCRAN DE JEU PRINCIPAL ========== -->
+  <div id="game-screen" class="screen">
+    <!-- Header -->
+    <header class="app-header">
+      <span class="header-logo" onclick="logoTap()">LE DERNIER SERVICE</span>
+      <div id="wallet-badge" class="wallet-badge hidden">&#9827; 0</div>
+    </header>
+    <!-- Chapitre -->
+    <div class="chapter-bar">
+      <span id="chap-num" class="chapter-num">CH. 1</span>
+      <span id="chap-name" class="chapter-name">Une soirée ordinaire</span>
+    </div>
+    <!-- Contenu onglets -->
+    <div class="main-content">
+      <div id="tab-content"></div>
+    </div>
+    <!-- Navigation basse -->
+    <nav class="app-nav">
+      <button class="nav-tab active" data-tab="enquete" onclick="switchTab('enquete')">
+        <span class="nav-icon">&#128269;</span>
+        <span>Enquête</span>
+      </button>
+      <button class="nav-tab" data-tab="inventaire" onclick="switchTab('inventaire')">
+        <span class="nav-icon">&#127183;</span>
+        <span>Inventaire</span>
+      </button>
+      <button class="nav-tab" data-tab="trefles" onclick="switchTab('trefles')">
+        <span class="nav-icon">&#9827;</span>
+        <span>Trèfles</span>
+      </button>
+      <button class="nav-tab" data-tab="dossier" onclick="switchTab('dossier')">
+        <span class="nav-icon">&#128203;</span>
+        <span>Dossier</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ========== SAISIE CARTE ========== -->
+  <div id="card-input-screen" class="screen" style="background:var(--cream)">
+    <header class="app-header">
+      <button class="btn btn-ghost" style="color:var(--muted-light);width:auto;min-height:auto;padding:8px;text-transform:none;font-weight:400" onclick="backToGame()">
+        ← Retour
+      </button>
+      <span style="font-family:var(--font-serif);color:var(--cream)">Ajouter une carte</span>
+      <span style="width:80px"></span>
+    </header>
+    <div class="main-content">
+      <div style="padding:16px">
+        <p class="section-title" style="margin-bottom:12px">1 — Famille</p>
+        <div id="suit-grid" class="suit-grid"></div>
+        <p class="section-title" style="margin-bottom:12px">2 — Valeur</p>
+        <div id="rank-grid" class="rank-grid"></div>
+        <div id="card-preview" class="card-preview" style="display:none"></div>
+        <button id="validate-card-btn" class="btn btn-dark" onclick="validateCard()" disabled>
+          Valider la carte
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FEEDBACK CARTE ========== -->
+  <div id="feedback-screen" class="screen"></div>
+
+  <!-- ========== RÉVÉLATION CARTE ========== -->
+  <div id="reveal-screen" class="screen" style="background:var(--charcoal);align-items:center;justify-content:center;padding:40px 24px;gap:24px;text-align:center;min-height:100vh;min-height:100dvh"></div>
+
+  <!-- ========== ÉCRAN FINAL ========== -->
+  <div id="end-screen" class="screen" style="background:var(--charcoal);align-items:center;justify-content:center;padding:40px 24px;gap:24px;text-align:center;min-height:100vh;min-height:100dvh"></div>
+
+  <!-- ========== OVERLAY MJ ========== -->
+  <div id="mj-overlay"></div>
+
+</div><!-- #app -->
+
+<script src="game.js"></script>
+</body>
+</html>
