@@ -108,43 +108,61 @@ const SETUP = [
 // =============================================================
 
 PC.intro = {
-  title:'Une soirée ordinaire',
-  lines:["Vous arrivez au manoir de Carreau par une soirée d'automne. La table est dressée. Mais Béatrice, la bonne de maison depuis vingt ans, est absente. Dans le salon, une carte à jouer est posée bien en évidence."],
-  obj:"Trouvez la carte visible dans la pièce principale.",
+  title:'Dossier Carreau',
+  lines:[
+    "Vous arrivez dans un ancien manoir une soirée de septembre, alors que la nuit commence déjà à tomber.",
+    "Une soirée calme, fraîche, presque ordinaire.",
+    "<em>Presque.</em>",
+    "Sur la table du salon vous attend un dossier que personne ne semble vouloir ouvrir.",
+    "<strong>DOSSIER CARREAU</strong>",
+    "— Affaire non résolue.<br>— Victime présumée : Béatrice de Carreau<br>— Dernier employé connu : Firmin, le valet des Carreau",
+    "<em>« Si vous lisez ceci, c'est que quelqu'un, quelque part, pense encore que cette affaire mérite d'être résolue. »</em>",
+  ],
+  obj:"PREMIÈRE MISSION — Retrouvez Firmin, le Valet de la famille. Il est quelque part dans cette pièce !",
   mj:null
 };
 PC.firmin_intro = {
-  title:'Le vieux domestique',
-  lines:["La carte porte la gravure d'un valet de carreau. Au dos : <em>« Voyez Firmin. »</em>","Firmin, le cuisinier, lève les yeux vers vous. Il semble vous attendait."],
+  title:'Firmin, Valet des Carreau',
+  lines:["La carte porte la gravure d'un valet de carreau. Firmin vous regarde. Il attend."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Firmin',emoji:'\uD83E\uDDD1\u200D\uD83C\uDF73',lines:[
-    "Vous voulez savoir où est Béatrice ?","---",
-    "Elle est… partie. Ce soir. Avec une valise. Mais pas de son plein gré.",
-    "Je l'ai vue. Elle avait les yeux mouillés.","---",
-    "M. Armand dit qu'elle a donné sa démission. Mais Béatrice ne partait jamais sans prévenir.",
-    "Si vous voulez que je vous en dise plus… il me faudrait quelque chose en échange."
+  mj:{name:'Firmin',emoji:'🤵',lines:[
+    "Ah ! Vous voilà enfin.",
+    "Je suis Firmin, le valet des Carreau.",
+    "---",
+    "Vous savez, Dame Carreau était beaucoup plus intelligente que Monsieur.",
+    "Monsieur était persuadé du contraire.",
+    "C'était assez amusant.",
+    "Enfin, pour Madame. Pas pour Monsieur.",
+    "---",
+    "Un soir, Madame m'a demandé de récupérer quelque chose que Monsieur cachait.",
+    "Et je sais où il avait l'habitude de cacher ses affaires.",
+    "Dans ses chaussures.",
+    "Enfin… pas toutes ses affaires.",
+    "**Mais suffisamment pour que ça vaille le coup de regarder.**",
   ]}
 };
 PC.find_kd = {
-  title:"La chambre d'Armand",
-  lines:["Firmin vous glisse une adresse du regard : la chambre du maître. Une porte entrebâillée, une invitation silencieuse.","Vous y entrez. Sur le bureau, une carte."],
-  obj:"Trouvez la carte cachée dans la chambre d'Armand.",
+  title:'Prochaine mission',
+  lines:["Firmin vous glisse un regard complice. Il sait quelque chose."],
+  obj:"PROCHAINE MISSION — Retrouvez les affaires du Roi de Carreau !",
   mj:null
 };
 PC.armand_reveal = {
-  title:'Le roi de carreau',
-  lines:["Un roi de carreau. Au dos, une liste de chiffres. Des colonnes soigneuses. Des annotations à l'encre rouge.","Quelqu'un comptait quelque chose. Sur des années."],
+  title:'Armand de Carreau',
+  lines:["Avec le Roi de Carreau, un billet plié. Armand semble avoir quelque chose à dire."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Armand',emoji:'\uD83C\uDFA9',lines:[
-    "Ah. Vous avez trouvé mes… relevés.","---",
-    "Ce sont de vieilles affaires. Des dettes réglées. Ne vous en préoccupez pas.",
-    "Béatrice est partie parce qu'elle le voulait. Je lui ai rendu service en la laissant partir discrètement.","---",
-    "**Maintenant, si vous voulez bien m'excuser.**"
+  mj:{name:'Armand',emoji:'🎩',lines:[
+    "Ah… Vous avez trouvé ses deux trèfles.",
+    "Enfin… MES deux trèfles, je veux dire.",
+    "Je… ne pensais pas que quelqu'un regarderait ici.",
+    "---",
+    "Enfin, peu importe. Vous pouvez les garder.",
+    "**Mais écoutez-moi bien : ne cherchez rien d'autre ici !**",
   ]}
 };
 PC.currency_puzzle = {
   title:"L'argent caché",
-  lines:["En fouillant la maison, vous tombez sur de petits tas de pièces dissimulés dans des endroits incongrus.","Une note griffonnée accompagne le premier tas : <em>« 1 sou = ___ »</em>"],
+  lines:["En fouillant, vous allez peut-être tomber sur des petits tas de sous dissimulés dans des endroits incongrus !"],
   obj:"Avez-vous trouvé de l'argent dans la maison ?",
   mj:null
 };
@@ -242,8 +260,19 @@ PC.chronologie = {title:'Reconstituez les faits',lines:["Vous rassemblez tout ce
 PC.accusation = {title:'Qui a tué Béatrice ?',lines:["Le moment est venu. Vous avez toutes les pièces du puzzle."],obj:'Désignez le coupable.',mj:null};
 PC.end = {title:'Épilogue',lines:[],obj:'',mj:null};
 
-CARD_REVEAL.Jd   = {title:'Firmin vous convoque',   lines:["Sur le valet, une invitation à s'entretenir avec le vieux cuisinier."]};
-CARD_REVEAL.Kd   = {title:"Les comptes d'Armand",   lines:["Cinq colonnes. Des chiffres. Des noms effacés, mais pas assez."]};
+CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES CARREAU', lines:[
+  "Ancien valet de la famille Carreau.",
+  "Très serviable.",
+  "Très stressé.",
+  "Très mauvais pour raconter une histoire dans l'ordre.",
+  "<em>Il parle peu sauf si on le paie…</em>",
+]};
+CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
+  "Mari de Béatrice de Carreau.",
+  "Héritier de la maison.",
+  "Très attaché à l'argent.",
+  "<em>Encore plus attaché à l'argent des autres.</em>",
+]};
 CARD_REVEAL.Qd   = {title:'La lettre de Béatrice',  lines:["Elle savait qu'elle était en danger. Elle a quand même avancé."]};
 CARD_REVEAL.Ah   = {title:'Un coeur sans vie',       lines:["L'as de coeur, planté dans un vase brisé. Un symbole ou une menace."]};
 CARD_REVEAL['8h']= {title:'La carte aux mille plis', lines:["Quelqu'un a plié cette carte avec soin. Pour qu'elle dise ce qu'elle devait taire."]};
@@ -292,7 +321,12 @@ function discoverCard(cardId) {
 
   if (card.type === 'currency') {
     if (G.clubs.includes(cardId)) return {type:'already_found'};
-    G.clubs.push(cardId); G.walletVisible = true; saveGame();
+    G.clubs.push(cardId);
+    // Avant l'étape monnaie : message neutre, pas de révélation portefeuille
+    const beforeCurrency = phaseIdx(G.phase) < phaseIdx('currency_puzzle');
+    if (!beforeCurrency) G.walletVisible = true;
+    saveGame();
+    if (beforeCurrency) return {type:'currency_early', cardId, value:card.value};
     return {type:'currency', cardId, value:card.value, balance:clubBalance()};
   }
   if (card.type === 'redHerring') {
@@ -314,6 +348,11 @@ function discoverCard(cardId) {
   G.mjDone = false;
   if (phaseIdx(G.phase) >= phaseIdx('find_qd')) G.gardenOpen = true;
   if (phaseIdx(G.phase) >= phaseIdx('bureau_puzzle')) G.bureauOpen = true;
+  // Avec le Roi de Carreau, le 2 de trèfle est physiquement caché ensemble
+  if (cardId === 'Kd' && !G.clubs.includes('2c')) {
+    G.clubs.push('2c');
+    G.walletVisible = true;
+  }
   saveGame(); checkEarlyCards();
   return {type:'main', cardId};
 }
@@ -408,7 +447,6 @@ function buildEnquete() {
       <div class="mj-banner-name">${mj.name} veut vous parler</div>
       <div class="mj-banner-sub">Allez voir le Maître du Jeu.</div>
       <div class="mj-dots"><div class="mj-dot"></div><div class="mj-dot"></div><div class="mj-dot"></div></div>
-      <div class="mj-tap-hint">Le MJ tape le logo 5\u00d7 pour voir le texte.</div>
     </div>`;
     return h;
   }
@@ -421,13 +459,14 @@ function buildPhaseSpecific() {
   if (G.phase==='currency_puzzle') {
     h+=`<div class="card" id="cpuzzle">
       <div class="section-title">Enigme monnaie</div>
-      <p class="narrative" style="margin-bottom:16px">Avez-vous trouve de l'argent dans la maison ?</p>
+      <p class="narrative" style="margin-bottom:16px">Avez-vous trouvé de l'argent dans la maison ?</p>
       <div id="cp1"><div style="display:flex;gap:10px">
         <button class="btn btn-dark" style="flex:1" onclick="cpYes()">OUI</button>
         <button class="btn btn-outline" style="flex:1" onclick="cpNo()">NON</button>
       </div></div>
       <div id="cp2" style="display:none">
-        <p class="narrative" style="font-size:1.3rem;font-weight:bold;margin-bottom:16px">1 sou = _____</p>
+        <p class="narrative" style="margin-bottom:12px">Intéressant, dans ce cas complétez cette équation !</p>
+        <p class="narrative" style="font-size:1.3rem;font-weight:bold;margin-bottom:16px">1 sou = 1 …</p>
         <input class="input-field" id="cp-input" type="text" placeholder="Votre réponse…" autocomplete="off" autocapitalize="off"/>
         <div id="cp-err" class="error-msg" style="display:none"></div>
         <div style="display:flex;gap:8px">
@@ -709,6 +748,7 @@ function validateCard(){
   if (result.type==='not_found')     { showFeedback('not_found',null); return; }
   if (result.type==='already_found') { showFeedback('already',null); return; }
   if (result.type==='early')         { showFeedback('early',null); return; }
+  if (result.type==='currency_early'){ showFeedback('currency_early',null); return; }
   showReveal(result.cardId||cardId, result.type);
 }
 
@@ -717,6 +757,7 @@ function showFeedback(type, cardId){
   if (type==='not_found') { icon='❌'; title='Carte inconnue'; msg="Cette carte n'existe pas dans ce jeu."; }
   else if (type==='already') { icon='🔁'; title='Déjà enregistrée'; msg='Vous avez déjà trouvé cette carte.'; }
   else if (type==='early') { icon='⚠️'; title='Preuve enregistrée'; msg="Cette carte semble importante… mais vous ne pouvez pas encore comprendre ce qu'elle signifie. Continuez votre enquête."; }
+  else if (type==='currency_early') { icon='🪙'; title='Intéressant…'; msg='Cela sera utile plus tard. Cette trouvaille a été enregistrée.'; }
   const bg=type==='early'?'var(--charcoal)':'var(--cream)';
   const tc=type==='early'?'var(--cream)':'var(--charcoal)';
   const pc=type==='early'?'rgba(245,240,232,.75)':'var(--muted)';

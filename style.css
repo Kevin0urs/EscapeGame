@@ -63,8 +63,10 @@ body {
   min-height: 100dvh;
 }
 .home-suits { display: flex; gap: 20px; font-size: 2.5rem; }
-.home-suits span:nth-child(1), .home-suits span:nth-child(2) { color: var(--crimson); opacity: .7; }
-.home-suits span:nth-child(3), .home-suits span:nth-child(4) { color: var(--muted); }
+.home-suits span:nth-child(1) { color: var(--crimson); opacity: .7; }
+.home-suits span:nth-child(2) { color: var(--muted); }
+.home-suits span:nth-child(3) { color: var(--crimson); opacity: .7; }
+.home-suits span:nth-child(4) { color: var(--muted); }
 .home-title { font-family: var(--font-serif); font-size: clamp(2rem, 8vw, 2.8rem); color: var(--cream); text-align: center; line-height: 1.1; letter-spacing: .04em; }
 .home-subtitle { font-family: var(--font-serif); font-size: 1rem; color: var(--gold); font-style: italic; text-align: center; margin-top: 8px; }
 .home-btns { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
