@@ -1,0 +1,25 @@
+﻿{
+  "name": "Le Dernier Service",
+  "short_name": "Dernier Service",
+  "description": "Une enquête de Béatrice de Carreau",
+  "start_url": "/EscapeGame/",
+  "scope": "/EscapeGame/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1C1C1A",
+  "theme_color": "#1C1C1A",
+  "icons": [
+    {
+      "src": "/EscapeGame/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/EscapeGame/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
