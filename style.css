@@ -27,7 +27,14 @@
   --header-h: 60px;
 }
 
-html, body { height: 100%; background: var(--charcoal); }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--charcoal);
+  overflow: hidden;
+}
 
 body {
   font-family: var(--font-sans);
@@ -36,40 +43,67 @@ body {
   overscroll-behavior: none;
 }
 
-/* ---- LAYOUT ---- */
+/* Custom scrollbars for mobile & desktop visibility */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201,168,76,0.6);
+  border-radius: 3px;
+}
+
 #app {
   max-width: 480px;
   margin: 0 auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   background: var(--cream);
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
-/* ---- ÉCRANS ---- */
-.screen { display: none; flex-direction: column; flex: 1; }
-.screen.active { display: flex; }
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+.screen.active {
+  display: flex;
+}
 
-/* ---- HOME ---- */
 #home {
   background: var(--charcoal);
   align-items: center;
   justify-content: center;
   padding: 40px 32px;
-  gap: 48px;
-  min-height: 100vh;
-  min-height: 100dvh;
+  gap: 32px;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.home-suits { display: flex; gap: 20px; font-size: 2.5rem; }
-.home-suits span:nth-child(1) { color: var(--crimson); opacity: .7; }
-.home-suits span:nth-child(2) { color: var(--muted); }
-.home-suits span:nth-child(3) { color: var(--crimson); opacity: .7; }
-.home-suits span:nth-child(4) { color: var(--muted); }
-.home-title { font-family: var(--font-serif); font-size: clamp(2rem, 8vw, 2.8rem); color: var(--cream); text-align: center; line-height: 1.1; letter-spacing: .04em; }
-.home-subtitle { font-family: var(--font-serif); font-size: 1rem; color: var(--gold); font-style: italic; text-align: center; margin-top: 8px; }
-.home-btns { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
+
+#game-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding-bottom: 24px;
+}
 
 /* ---- HEADER ---- */
 .app-header {
@@ -389,6 +423,7 @@ body {
 /* ---- MJ OVERLAY ---- */
 #mj-overlay {
   display: none;
+  height: 100%;
   position: fixed; inset: 0; background: rgba(28,28,26,.97);
   z-index: 100; overflow-y: auto; overscroll-behavior: contain;
 }
