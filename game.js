@@ -51,7 +51,7 @@ const CHRONO_EVENTS = [
   { id:'X',label:"Béatrice découvre les vols",correct:1},
   { id: 'X', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
   { id: 'X', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
-  { id: 'X', label: "Armand détourne l'argent de sa femmee", correct: 0 },
+  { id: 'X', label: "Armand détourne l'argent de sa femme", correct: 0 },
   { id: 'X', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
   { id: 'X', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
   { id: 'X', label: "Armand paie pendant cinq mois", correct: 3 },
@@ -75,7 +75,7 @@ const DOSSIER = [
 const END_LINES = [
   "Armand DE CARREAU était coupable.",
   "---",
-  "Il a pourtant réussi a convainre tous les enquêteurs",
+  "Il a pourtant réussi a convainre tous les enquêteurs.",
   "---",
   "Sauf vous, vous avez perçer la vérité",
   "Vos découvertes ont tout changé.",
@@ -84,7 +84,7 @@ const END_LINES = [
   "À présent je peux quitter votre monde et rejoidnre celui qui m'attend !",
   "---",
   "Merci à vous.","---",
-  "— Firmin ancien valet DE CARREAU, pour toujours gardien de la maison",
+  "— Firmin, Ancien valet DE CARREAU, pour toujours Gardien de la maison",
 ];
 
 const SETUP = [
