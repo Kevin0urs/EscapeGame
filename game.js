@@ -202,8 +202,8 @@ PC.beatrice_reveal = {
   mj:null
 };
 PC.find_ah = {
-  title:'La piste du bureau',
-  lines:["La lettre de Béatrice vous glace. Il faut trouver ce qui s'est passé dans ce bureau.","D'abord, quelque chose attire votre attention ailleurs dans la maison."],
+  title:'La chambre froide',
+  lines:["La lettre de Béatrice vous glace, et c'est un bon indice. Il faut trouver ce qui s'est passé dans ce bureau.","D'abord, quelque chose attire votre attention ailleurs dans la maison."],
   obj:'Cherchez dans la maison — une carte rouge vous attend.',
   mj:null
 };
@@ -480,7 +480,7 @@ function buildPhaseSpecific() {
             <p>Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.</p>
             <p>Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer.</p>
             <p>Alors je vais faire croire à ma mort et m'enfuir. »</p>
-            <p style="font-weight:bold;color:var(--crimson)">Tout est dans le frigo ! Si il est vide c'est que j'ai réussi !</p>
+            <p style="font-weight:bold;color:var(--crimson)">Tout est dans la chambre froide! Si il est vide c'est que j'ai réussi !</p>
             <p>  - Béatrice - </p>
           </div>
         </div>
