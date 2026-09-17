@@ -58,16 +58,16 @@ const CHRONO_EVENTS = [
 ];
 
 const DOSSIER = [
-  {id:'victime',  k:'Béatrice',             v:"Dame DE CARREAU ayant vécu 20 ans dans la maison depuis 20 ans.", phase:'intro'},
-  {id:'suspect1', k:'Armand de Carreau',    v:"Maître des lieux. Aime l'argent, un peu trop", phase:'intro'},
-  {id:'temoin',   k:'Firmin',               v:"Valet. Sait pleins des choses... mais pas tout", phase:'firmin_intro'},
-  {id:'chantage', k:'Le chantage',          v:"Béatrice faisait chanter Armand depuis des mois pour récupérer ses trèfles.", phase:'firmin_testimony'},
-  {id:'jardin',   k:'Le jardin',            v:"Firmin y a envoyé les enquêteurs. Une lettre y était cachée.", phase:'find_qd'},
-  {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique la chambre froide et qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
+  {id:'victime',  k:'Béatrice DE CARREAU',  v:"Victime: Dame DE CARREAU ayant vécu 20 ans dans la maison.", phase:'intro'},
+  {id: 'suspect1', k: 'Armand DE CARREAU', v: "Maître des lieux. Aime l'argent, un peu trop", phase:'armand_reveal'},
+  {id:'temoin',   k:'Firmin',               v:"Valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
+  {id:'vol',      k:'Le vol',               v:"Armand volait sa femme depuis des années.", phase:'firmin_testimony'},
+  {id:'jardin',   k:'Le jardin',            v:"Firmin vous y a envoyé. Une lettre y était cachée.", phase:'find_qd'},
+  {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique de vérifer la chambre froide et précise qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
   {id:'pliage',   k:'La Feuille pliée',     v:"Révèle le mot BUREAU quand on la plie correctement.", phase:'bureau_puzzle'},
   {id:'comptes',  k:"Le relevé d'Armand",   v:"Des années de vol soigneusement documentés.", phase:'comptes_reveal'},
   {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice pour un accord.", phase:'comptes_reveal'},
-  {id:'as',       k:"L'as de pique",        v:"Trouvé dans la maison. Firmin l'a vu dans la maison le soir du drmame.", phase:'firmin_final'},
+  {id:'as',       k:"L'as de pique",        v:"Le pique de la cheminée, trouvé dans la salle de bain. Firmin l'a vu dans la maison le soir du drmame.", phase:'firmin_final'},
   {id:'fp7s', k:'Empreinte — fausse piste', v:"L'empreinte sur le 7 de pique ne correspond à aucun suspect.", phase:'never', rh:'7s'},
 ];
 
