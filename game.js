@@ -185,7 +185,7 @@ PC.firmin_testimony = {
     "Moi, je n'ai jamais vraiment compris.",
     "Pour moi, si ça ne se mange pas, ça ne sert à rien.",
     "Les framboises, par exemple, ça sent bon, c'est joli mais surtot ça se mange !",
-    "Voilà une fleur que je respecte."
+    "Voilà une fleur que je respecte.",
   ]}
 };
 PC.find_qd = {
