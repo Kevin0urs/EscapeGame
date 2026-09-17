@@ -1,4 +1,4 @@
-﻿// =============================================================
+// =============================================================
 // LE DERNIER SERVICE — game.js (Part 1: Data)
 // =============================================================
 
@@ -179,7 +179,7 @@ PC.firmin_testimony = {
     "Pas beaucoup à chaque fois.",
     "Mais depuis longtemps.", "---",
     "C'est impressionnant comme une petite quantité devient énorme quand on la répète pendant des années.",
-    "C'est comme les moustiques, la quanité de sang qu'ils ont du me prendre ceux-là !"; "---",
+    "C'est comme les moustiques, la quantité de sang qu'ils ont dû me prendre ceux-là !", "---",
     "Mais je m'égare.",
     "Madame adorait les fleurs. Elle passait beaucoup de temps dans le jardin",
     "Moi, je n'ai jamais vraiment compris.",
