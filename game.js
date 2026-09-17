@@ -39,9 +39,9 @@ const CHAPTERS = {
   currency_puzzle:{n:2,t:'Le maître des lieux'}, find_clubs:{n:2,t:'Le maître des lieux'},
   firmin_testimony:{n:2,t:'Le maître des lieux'}, find_qd:{n:3,t:'Madame DE CARREAU'},
   beatrice_reveal:{n:3,t:'Madame DE CARREAU'}, find_ah:{n:3,t:'Madame DE CARREAU'},
-  find_8h:{n:3,t:'Madame DE CARREAU'}, bureau_puzzle:{n:4,t:'Ce que cache le bureau'},
-  find_10d:{n:4,t:'Ce que cache le bureau'}, comptes_reveal:{n:4,t:'Ce que cache le bureau'},
-  find_as:{n:4,t:'Ce que cache le bureau'}, firmin_final:{n:5,t:'La vérité'},
+  find_8h:{n:3,t:'Madame DE CARREAU'}, bureau_puzzle:{n:4,t:'Ce que cache ce papier'},
+  find_10d:{n:4,t:'Ce que cache ce papier'}, comptes_reveal:{n:4,t:'Ce que cache ce papier'},
+  find_as:{ n:4, t:'Ce que cache ce papier'}, firmin_final:{n:5,t:'La vérité'},
   chronologie:{n:5,t:'La vérité'}, accusation:{n:5,t:'La vérité'}, end:{n:5,t:'Épilogue'},
 };
 
@@ -60,12 +60,12 @@ const CHRONO_EVENTS = [
 const DOSSIER = [
   {id:'victime',  k:'Béatrice',             v:"Bonne de maison depuis 20 ans. Absente ce soir. Héritière lésée.", phase:'intro'},
   {id:'suspect1', k:'Armand de Carreau',    v:"Maître des lieux. Nie savoir où est Béatrice. Nerveux.", phase:'intro'},
-  {id:'temoin',   k:'Firmin',               v:"Cuisinier. A vu Béatrice partir de force. Témoignage monnayable.", phase:'firmin_intro'},
+  {id:'temoin',   k:'Firmin',               v:"Valet. A vu Béatrice partir de force. Témoignage monnayable.", phase:'firmin_intro'},
   {id:'heritage', k:'La succession',        v:"Armand a détourné l'héritage de la mère de Béatrice il y a 20 ans.", phase:'firmin_testimony'},
   {id:'chantage', k:'Le chantage',          v:"Béatrice faisait chanter Armand depuis 5 ans. Les trèfles = les paiements.", phase:'firmin_testimony'},
   {id:'jardin',   k:'Le jardin',            v:"Firmin y a envoyé les enquêteurs. Une carte y était cachée.", phase:'find_qd'},
   {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment. Elle savait qu'elle était en danger.", phase:'beatrice_reveal'},
-  {id:'pliage',   k:'La carte pliée',       v:"Révèle le mot BUREAU quand on la plie correctement.", phase:'bureau_puzzle'},
+  {id:'pliage',   k:'La Feuille pliée',     v:"Révèle le mot BUREAU quand on la plie correctement.", phase:'bureau_puzzle'},
   {id:'comptes',  k:"Le relevé d'Armand",   v:"5 ans de paiements soigneusement documentés. Preuve du chantage.", phase:'comptes_reveal'},
   {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice dans le bureau ce soir pour un accord.", phase:'comptes_reveal'},
   {id:'as',       k:"L'as de pique",        v:"Trouvé dans la maison. Firmin l'a vu dans la poche d'Armand ce soir.", phase:'firmin_final'},
@@ -209,7 +209,8 @@ PC.find_ah = {
 };
 PC.find_8h = {
   title:"La chambre froide n'est pas vide !",
-  lines: ["Vous avez trouvé un coeur et du sang congelé ! Entre nous, cela ne semble pas un coeur humain mais il aurait parfaitement pu servir a créer un scéne de crime !",
+  lines: ["Vous avez trouvé un coeur et du sang congelé !", 
+      "Entre nous, cela ne semble pas un coeur humain mais il aurait parfaitement pu servir a créer un scène de crime !",
       "Vous avez également trouvé un papier qui semble avoir été pliée et repliée de nombreuses fois.",
       "Comme si on voulait qu'il révèle quelque chose."],
   obj:'Trouvez le message caché.',
@@ -217,8 +218,8 @@ PC.find_8h = {
 };
 PC.bureau_puzzle = {
   title:'Le message du pliage',
-  lines:["La carte pliée. En la manipulant, quelque chose apparaît. Les plis rapprochent certaines lettres, certains mots."],
-  obj:"Pliez la carte comme elle était à l'origine. Quel lieu révèle-t-elle ?",
+  lines:["En manipulant ce papier, quelque chose apparaît. Armand DE CARREAU n'aurait pas aimé cela !"],
+  obj:"Pliez la feuille Quel lieu révèle-t-elle ?",
   mj:null
 };
 PC.find_10d = {
@@ -275,7 +276,7 @@ CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
 ]};
 CARD_REVEAL.Qd   = {title:'La lettre de Béatrice',  lines:["Elle savait qu'elle était en danger. Elle a quand même avancé."]};
 CARD_REVEAL.Ah   = {title:'Un coeur sans vie',       lines:["L'as de coeur, planté dans un vase brisé. Un symbole ou une menace."]};
-CARD_REVEAL['8h']= {title:'La carte aux mille plis', lines:["Quelqu'un a plié cette carte avec soin. Pour qu'elle dise ce qu'elle devait taire."]};
+CARD_REVEAL['8h']= {title:'La feuille aux mille plis', lines:["Quelqu'un avait caché ce symbole avec soin !"]};
 CARD_REVEAL['10d']={title:'Cinq années de silence',  lines:["Armand a tout consigné. Les dates. Les montants. Comme s'il voulait être prêt pour un procès."]};
 CARD_REVEAL.As   = {title:"L'arme de la vérité",     lines:["L'as de pique. Firmin le reconnaît. Il était dans la poche d'Armand ce soir-là."]};
 CARD_REVEAL['2c']= {title:'Deux trèfles',  lines:["Une pièce à l'effigie d'un trèfle. Valeur : 2."]};
@@ -543,10 +544,10 @@ function buildPhaseSpecific() {
 
   if (G.phase==='bureau_puzzle') {
     h+=`<div class="card" id="bpuzzle">
-      <div class="section-title">Carte pliée</div>
+      <div class="section-title">Feuille pliée</div>
       <div id="bp1">
-        <p class="narrative" style="margin-bottom:16px">Cette carte a été pliée intentionnellement. Pliez-la comme elle était à l'origine.</p>
-        <button class="btn btn-dark" onclick="bpFolded()">J'ai plié la carte</button>
+        <p class="narrative" style="margin-bottom:16px">Pliez ce papier, Armand DE CARREAU n'aurait pas aimé cela !</p>
+        <button class="btn btn-dark" onclick="bpFolded()">J'ai plié la feuille</button>
       </div>
       <div id="bp2" style="display:none">
         <p class="narrative" style="margin-bottom:16px">Quel lieu voyez-vous ?</p>
