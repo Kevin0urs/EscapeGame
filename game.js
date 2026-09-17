@@ -203,8 +203,8 @@ PC.beatrice_reveal = {
 };
 PC.find_ah = {
   title:'La chambre froide',
-  lines:["La lettre de Béatrice vous glace, et c'est un bon indice. Il faut trouver ce qui s'est passé dans ce bureau.","D'abord, quelque chose attire votre attention ailleurs dans la maison."],
-  obj:'Cherchez dans la maison — une carte rouge vous attend.',
+  lines:["La lettre de Béatrice vous glace, c'est un bon indice. Il faut vérifier si elle a réussi !","D'abord, quelque chose attire votre attention ailleurs dans la maison."],
+  obj:'Cherchez la chambre froide !',
   mj:null
 };
 PC.find_8h = {
