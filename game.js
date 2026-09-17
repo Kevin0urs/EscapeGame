@@ -174,7 +174,7 @@ PC.firmin_testimony = {
   title:'Ce que sait Firmin',
   lines:["Firmin soupèse l'argent dans sa main. Il vous regarde. Il se décide."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Firmin',emoji:'\uD83E\uDDD1\u200D\uD83C\uDF73',lines:[
+  mj:{name:'Firmin',emoji:'🤵',lines:[
     "Mme. Béatrice DE CARREAU savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
     "Il y a des années, Armand a détourné l'argent d'une succession. La mère de Béatrice était l'héritière.",
     "Béatrice a découvert les documents il y a six mois. Elle le faisait chanter, discrètement.","---",
@@ -189,10 +189,10 @@ PC.find_qd = {
   mj:null
 };
 PC.beatrice_reveal = {
-  title:'La dame de carreau',
+  title:'La dame DE CARREAU',
   lines:["Une dame de carreau. Mais c'est la lettre au dos qui vous arrête, griffonnée à la hâte."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Béatrice',emoji:'\uD83D\uDC69',lines:[
+  mj:{name:'Béatrice',emoji:'🤵',lines:[
     "Si vous lisez ceci, c'est qu'il est trop tard pour moi.","---",
     "J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu.",
     "Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.","---",
@@ -228,7 +228,7 @@ PC.comptes_reveal = {
   title:'Les comptes',
   lines:["Un dix de carreau. Et au dos, un relevé minutieux : les sommes versées à Béatrice, année par année.","Armand conservait les preuves. Pour quoi faire ?"],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Armand',emoji:'\uD83C\uDFA9',lines:[
+  mj:{name:'Armand',emoji:'🎩',lines:[
     "Vous avez tout trouvé, à ce que je vois.","---",
     "Oui. Béatrice me faisait chanter. J'ai payé. Pendant cinq ans, j'ai payé.",
     "Ce soir, je lui ai proposé un accord final. Elle viendrait dans le bureau. Je lui donnerais tout ce que je lui devais.","---",
@@ -246,7 +246,7 @@ PC.firmin_final = {
   title:'Le témoignage final',
   lines:["Un as de pique. Froid. Définitif.","Firmin vous voit rapporter la carte. Son visage se décompose."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Firmin',emoji:'\uD83E\uDDD1\u200D\uD83C\uDF73',lines:[
+  mj:{name:'Firmin',emoji:'🤵',lines:[
     "Je… j'aurais dû parler plus tôt.","---",
     "J'étais dans le couloir. J'ai entendu. La porte du bureau. Des voix. Puis plus rien.",
     "Et M. Armand qui ressortait seul. Avec cette carte dans la poche.","---",
@@ -266,8 +266,7 @@ CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES CARREAU', lines:[
   "<em>Il parle peu sauf si on le paie…</em>",
 ]};
 CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
-  "Mari de Béatrice de Carreau.",
-  "Héritier de la maison.",
+  "Mari de Béatrice DE CARREAU.",
   "Très attaché à l'argent.",
   "<em>Encore plus attaché à l'argent des autres.</em>",
 ]};
