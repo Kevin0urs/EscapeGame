@@ -404,7 +404,7 @@ let chronoAnswer = [], shuffledChrono = [];
 
 function render() {
   if (G.phase==='end') { showEndScreen(); return; }
-  updateChapterBar(); updateWallet(); renderTab();
+  updateChapterBar(); updateWallet(); updateNavTabs(); renderTab();
 }
 
 function updateChapterBar() {
@@ -417,6 +417,17 @@ function updateWallet() {
   const wb = document.getElementById('wallet-badge');
   if (G.walletVisible) { wb.textContent='\u2663 '+clubBalance(); wb.classList.remove('hidden'); }
   else wb.classList.add('hidden');
+}
+
+function updateNavTabs() {
+  const showTrefles = !!G.walletVisible || ((CHAPTERS[G.phase] ? CHAPTERS[G.phase].n : 1) >= 2);
+  const trefleBtn = document.querySelector('.nav-tab[data-tab="trefles"]');
+  if (trefleBtn) {
+    trefleBtn.style.display = showTrefles ? '' : 'none';
+  }
+  if (!showTrefles && currentTab === 'trefles') {
+    currentTab = 'enquete';
+  }
 }
 
 function renderTab() {
