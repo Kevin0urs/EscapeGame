@@ -203,14 +203,16 @@ PC.beatrice_reveal = {
 };
 PC.find_ah = {
   title:'La chambre froide',
-  lines:["La lettre de Béatrice vous glace, c'est un bon indice. Il faut vérifier si elle a réussi !","D'abord, quelque chose attire votre attention ailleurs dans la maison."],
+    lines: ["La lettre de Béatrice vous glace, c'est un bon indice.","Il faut vérifier si elle a réussi!"],
   obj:'Cherchez la chambre froide !',
   mj:null
 };
 PC.find_8h = {
-  title:'La carte pliée',
-  lines:["Un as de cœur, presque ordinaire. Mais une autre carte, à côté, semble avoir été pliée et repliée de nombreuses fois. Comme si on voulait qu'elle révèle quelque chose."],
-  obj:'Trouvez la carte pliée et manipulez-la.',
+  title:"La chambre froide n'est pas vide !",
+  lines: ["Vous avez trouvé un coeur et du sang congelé ! Entre nous, cela ne semble pas un coeur humain mais il aurait parfaitement pu servir a créer un scéne de crime !",
+      "Vous avez également trouvé un papier qui semble avoir été pliée et repliée de nombreuses fois.",
+      "Comme si on voulait qu'il révèle quelque chose."],
+  obj:'Trouvez le message caché.',
   mj:null
 };
 PC.bureau_puzzle = {
@@ -479,8 +481,10 @@ function buildPhaseSpecific() {
             <p>J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu.</p>
             <p>Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.</p>
             <p>Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer.</p>
-            <p>Alors je vais faire croire à ma mort et m'enfuir. »</p>
-            <p style="font-weight:bold;color:var(--crimson)">Au moment où j'écris ces lignes tout est quasiment prêt dans la chambre froide! Si elle est vide c'est que j'ai réussi !</p>
+            <p>Alors je vais faire croire à ma mort et m'enfuir.</p>
+            <p>Au moment où j'écris ces lignes tout est quasiment prêt dans la chambre froide!</p>
+            <p style="font-weight:bold;color:var(--crimson)"> Si elle est vide c'est que j'ai réussi !</p>
+            <p>Si elle ne l'est pas, sachez que mon mari Armand déteste les bateaux!" </p>
             <p>  - Béatrice - </p>
           </div>
         </div>
