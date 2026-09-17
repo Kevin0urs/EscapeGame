@@ -48,13 +48,13 @@ const CHAPTERS = {
 const PC = {}; // PHASE_CONTENT — rempli dans part2
 const CARD_REVEAL = {}; // rempli dans part2
 const CHRONO_EVENTS = [
-  { id:'X',label:"Béatrice découvre les vols",correct:1},
-  { id: 'X', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
-  { id: 'X', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
-  { id: 'X', label: "Armand détourne l'argent de sa femme", correct: 0 },
-  { id: 'X', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
-  { id: 'X', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
-  { id: 'X', label: "Armand paie pendant cinq mois", correct: 3 },
+  { id:'a',label:"Béatrice découvre les vols",correct:1},
+  { id: 'b', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
+  { id: 'c', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
+  { id: 'd', label: "Armand détourne l'argent de sa femme", correct: 0 },
+  { id: 'e', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
+  { id: 'f', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
+  { id: 'g', label: "Armand paie pendant cinq mois", correct: 3 },
 ];
 
 const DOSSIER = [
