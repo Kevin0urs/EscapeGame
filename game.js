@@ -801,6 +801,8 @@ function backToGame(){
   if (G.phase==='end'){ showEndScreen(); return; }
   document.getElementById('game-screen').classList.add('active');
   render();
+  const mc = document.querySelector('#game-screen .main-content');
+  if (mc) mc.scrollTop = 0;
 }
 
 // =============================================================
@@ -950,7 +952,7 @@ function startNew(){
 
 function resumeGame(){ G=(()=>{try{const r=localStorage.getItem('lds_v2');if(!r)return defaultGame();const g=JSON.parse(r);return g.phase?g:defaultGame();}catch(e){return defaultGame();}})(); goGame(); }
 
-function switchTab(tab){ currentTab=tab; renderTab(); }
+function switchTab(tab){ currentTab=tab; renderTab(); const mc = document.querySelector('#game-screen .main-content'); if (mc) mc.scrollTop = 0; }
 
 function logoTap(){
   logoTaps++;

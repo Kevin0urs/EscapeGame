@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    LE DERNIER SERVICE — CSS
    Palette : crème / noir charbon / rouge sombre / doré
    ============================================================ */
@@ -40,16 +40,25 @@ body {
 #app {
   max-width: 480px;
   margin: 0 auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   background: var(--cream);
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 /* ---- ÉCRANS ---- */
-.screen { display: none; flex-direction: column; flex: 1; }
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .screen.active { display: flex; }
 
 /* ---- HOME ---- */
@@ -59,8 +68,7 @@ body {
   justify-content: center;
   padding: 40px 32px;
   gap: 48px;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100%;
 }
 .home-suits { display: flex; gap: 20px; font-size: 2.5rem; }
 .home-suits span:nth-child(1) { color: var(--crimson); opacity: .7; }
@@ -122,10 +130,11 @@ body {
 /* ---- MAIN CONTENT ---- */
 .main-content {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  padding-bottom: calc(var(--nav-h) + 16px);
+  padding-bottom: 16px;
 }
 
 /* ---- NAV ---- */
