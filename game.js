@@ -48,57 +48,52 @@ const CHAPTERS = {
 const PC = {}; // PHASE_CONTENT — rempli dans part2
 const CARD_REVEAL = {}; // rempli dans part2
 const CHRONO_EVENTS = [
-  {id:'A',label:"Armand détourne l'héritage de la mère de Béatrice",correct:0},
-  {id:'B',label:"Béatrice découvre les documents compromettants",correct:1},
-  {id:'C',label:"Début du chantage : Béatrice exige des pièces à trèfle",correct:2},
-  {id:'D',label:"Armand paie en silence pendant cinq ans",correct:3},
-  {id:'E',label:"Armand propose à Béatrice un accord final dans le bureau",correct:4},
-  {id:'F',label:"Béatrice se rend dans le bureau, seule",correct:5},
-  {id:'G',label:"Firmin entend la porte du bureau puis le silence",correct:6},
+  { id:'A',label:"Béatrice découvre les vols",correct:1},
+  { id: 'B', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
+  { id: 'C', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
+  { id: 'D', label: "Armand détourne l'héritage de sa femmee", correct: 0 },
+  { id: 'E', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
+  { id: 'F', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
+  { id: 'G', label: "Armand paie pendant cinq mois", correct: 3 },
 ];
 
 const DOSSIER = [
-  {id:'victime',  k:'Béatrice',             v:"Bonne de maison depuis 20 ans. Absente ce soir. Héritière lésée.", phase:'intro'},
-  {id:'suspect1', k:'Armand de Carreau',    v:"Maître des lieux. Nie savoir où est Béatrice. Nerveux.", phase:'intro'},
-  {id:'temoin',   k:'Firmin',               v:"Valet. A vu Béatrice partir de force. Témoignage monnayable.", phase:'firmin_intro'},
-  {id:'heritage', k:'La succession',        v:"Armand a détourné l'héritage de la mère de Béatrice il y a 20 ans.", phase:'firmin_testimony'},
-  {id:'chantage', k:'Le chantage',          v:"Béatrice faisait chanter Armand depuis 5 ans. Les trèfles = les paiements.", phase:'firmin_testimony'},
-  {id:'jardin',   k:'Le jardin',            v:"Firmin y a envoyé les enquêteurs. Une carte y était cachée.", phase:'find_qd'},
-  {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment. Elle savait qu'elle était en danger.", phase:'beatrice_reveal'},
+  {id:'victime',  k:'Béatrice',             v:"Dame DE CARREAU ayant vécu 20 ans dans la maison depuis 20 ans.", phase:'intro'},
+  {id:'suspect1', k:'Armand de Carreau',    v:"Maître des lieux. Aime l'argent, un peu trop", phase:'intro'},
+  {id:'temoin',   k:'Firmin',               v:"Valet. Sait pleins des choses... mais pas tout", phase:'firmin_intro'},
+  {id:'chantage', k:'Le chantage',          v:"Béatrice faisait chanter Armand depuis des mois pour récupérer ses trèfles.", phase:'firmin_testimony'},
+  {id:'jardin',   k:'Le jardin',            v:"Firmin y a envoyé les enquêteurs. Une lettre y était cachée.", phase:'find_qd'},
+  {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique la chambre froide et qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
   {id:'pliage',   k:'La Feuille pliée',     v:"Révèle le mot BUREAU quand on la plie correctement.", phase:'bureau_puzzle'},
-  {id:'comptes',  k:"Le relevé d'Armand",   v:"5 ans de paiements soigneusement documentés. Preuve du chantage.", phase:'comptes_reveal'},
-  {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice dans le bureau ce soir pour un accord.", phase:'comptes_reveal'},
-  {id:'as',       k:"L'as de pique",        v:"Trouvé dans la maison. Firmin l'a vu dans la poche d'Armand ce soir.", phase:'firmin_final'},
+  {id:'comptes',  k:"Le relevé d'Armand",   v:"Des années de vol soigneusement documentés.", phase:'comptes_reveal'},
+  {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice pour un accord.", phase:'comptes_reveal'},
+  {id:'as',       k:"L'as de pique",        v:"Trouvé dans la maison. Firmin l'a vu dans la maison le soir du drmame.", phase:'firmin_final'},
   {id:'fp7s', k:'Empreinte — fausse piste', v:"L'empreinte sur le 7 de pique ne correspond à aucun suspect.", phase:'never', rh:'7s'},
-  {id:'fpJh', k:'Message anonyme — fausse piste', v:"Le message sur le valet de coeur reste non élucidé.", phase:'never', rh:'Jh'},
 ];
 
 const END_LINES = [
-  "Armand de Carreau a été conduit au poste de gendarmerie le lendemain matin.",
+  "Armand DE CARREAU était coupable.",
   "---",
-  "Dans le bureau, derrière un panneau coulissant, on a retrouvé Béatrice.",
-  "Elle était vivante. À peine.",
+  "Il a pourtant réussi a convainre tous les enquêteurs",
   "---",
-  "Armand l'avait enfermée, comptant la faire disparaître dans la nuit.",
+  "Sauf vous, vous avez perçer la vérité",
   "Vos découvertes ont tout changé.",
   "---",
-  "Béatrice a pu témoigner. Armand a tout avoué.",
-  "---",
-  "Vingt ans de mensonges. Cinq ans de chantage.",
-  "Et une nuit pour que la vérité éclate.",
+  "J'avais une mission : Faire éclater la véritée.",
+  "À présent je peux quitter votre monde et rejoidnre celui qui m'attend !",
   "---",
   "Merci à vous.",
-  "— Béatrice de Carreau",
+  "— Firmin ancien valet DE CARREAU, pour toujours gardien de la maison",
 ];
 
 const SETUP = [
   {c:'V\u2666 Valet de Carreau', l:'Dans le salon, posé en évidence (table basse, cheminée).'},
-  {c:'R\u2666 Roi de Carreau',   l:"Dans la chambre d'Armand, sur le bureau ou dans un tiroir."},
+  {c:'R\u2666 Roi de Carreau',   l:"Dans une chaussure"},
   {c:'D\u2666 Dame de Carreau',  l:'Dans le jardin (pot de fleur, sous une pierre, près d\'un rosier).'},
-  {c:'A\u2665 As de Coeur',      l:'Dans la cuisine ou près d\'un vase brisé.'},
-  {c:'8\u2665 Huit de Coeur',    l:'Sur une table, pré-pliée pour que le mot BUREAU apparaisse.'},
+  {c:'A\u2665 As de Coeur',      l:'Dans le congélateur.'},
+  {c:'8\u2665 Huit de Coeur',    l:"Faire un bateau en papier écrire '8♥ - BUREAU' sur les plis, dépliez le papier et froissez le un peu, puis mettre la papier au congélateur avec l'As de ♥"},
   {c:'10\u2666 Dix de Carreau',  l:'Dans le bureau, sur le sous-main ou dans un classeur.'},
-  {c:'A\u2660 As de Pique',      l:'Dans un couloir ou près d\'une entrée.'},
+  {c:'A\u2660 As de Pique',      l:'Dans dans la salle de bain (dans une serviette ou sous un gel douche)'},
   {c:'2\u2663 à 6\u2663 Trèfles',l:'Cachés partout : sous des vases, derrière des livres, dans des chaussures.'},
   {c:'7\u2660 Sept de Pique',    l:'Facilement visible — fausse piste intentionnelle.'},
   {c:'V\u2665 Valet de Coeur',   l:'Facilement visible — fausse piste intentionnelle.'},
@@ -197,7 +192,7 @@ PC.find_qd = {
 };
 PC.beatrice_reveal = {
   title:'La Dame DE CARREAU',
-  lines:["Une dame de carreau. Mais c'est la lettre au dos qui vous arrête, griffonnée à la hâte."],
+  lines:["Une dame DE CARREAU. Mais c'est la lettre au dos qui vous arrête, griffonnée à la hâte."],
   obj:'',
   mj:null
 };
@@ -210,10 +205,10 @@ PC.find_ah = {
 PC.find_8h = {
   title:"La chambre froide n'est pas vide !",
   lines: ["Vous avez trouvé un coeur et du sang congelé !", 
-      "Entre nous, cela ne semble pas un coeur humain mais il aurait parfaitement pu servir a créer un scène de crime !",
+      "Entre nous, cela ne semble pas un coeur humain mais il aurait parfaitement pu servir à créer un scène de crime !",
       "Vous avez également trouvé un papier qui semble avoir été pliée et repliée de nombreuses fois.",
       "Comme si on voulait qu'il révèle quelque chose."],
-  obj:'Trouvez le message caché.',
+  obj:'Trouvez le symbole caché.',
   mj:null
 };
 PC.bureau_puzzle = {
@@ -224,67 +219,67 @@ PC.bureau_puzzle = {
 };
 PC.find_10d = {
   title:"Le bureau d'Armand",
-  lines:["Le bureau. Armand le fermait toujours à clé. Ce soir, la porte est entrouverte.","Sur le sous-main, bien en évidence, une carte."],
-  obj:'Trouvez la carte dans le bureau.',
+  lines:["Armand DE CARREAU adorait l'argent. C'est dans son bureau qu'il faisait souvent ses comptes","Encore et encore !"],
+  obj:"Trouvez le carnet de compte d'Armand !",
   mj:null
 };
 PC.comptes_reveal = {
   title:'Les comptes',
-  lines:["Un dix de carreau. Et au dos, un relevé minutieux : les sommes versées à Béatrice, année par année.","Armand conservait les preuves. Pour quoi faire ?"],
+  lines:["Un dix de carreau. Et au dos, un relevé minutieux : les sommes volées à Béatrice","Mois après mois","Année par année.","Mais aux dates les plus récentes on y voit des sommes rendues à Béatrice DE CARREAU !"],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Armand',emoji:'🎩',lines:[
-    "Vous avez tout trouvé, à ce que je vois.","---",
-    "Oui. Béatrice me faisait chanter. J'ai payé. Pendant cinq ans, j'ai payé.",
-    "Ce soir, je lui ai proposé un accord final. Elle viendrait dans le bureau. Je lui donnerais tout ce que je lui devais.","---",
-    "Mais elle n'est pas venue. Elle a pris peur et elle est partie.",
-    "**Je ne sais pas où elle est. Je vous le jure.**"
+  mj:{name:'Frimin',emoji:'🤵',lines:[
+    "Vous trouvé les comptes de Monsieur, à ce que je vois.","---",
+    "Oui. Béatrice l'avait confronté et le faisait chanter pour récupérer son argent. Monsieur a payé. Pendant cinq mois.",
+    "Mais il supporter de moins en mois cela, il la supportait de moins en moins...","---",
+    "Un soir il m'a dit qu'il allait lui proposé un accord final. Il lui donnerait tout ce qu'il lui devait.","---",
+    "Le lendemain j'ai appris qu'elle n'est pas venue. Elle a pris peur et elle est partie.",
+    "**Il me l'a juré, mais il m'a surement menti...**"
   ]}
 };
 PC.find_as = {
-  title:'La dernière pièce',
-  lines:["Armand ment. Il manque encore quelque chose. Une preuve. Une arme peut-être.","Cherchez. Elle est quelque part dans cette maison."],
+  title:'La dernière carte',
+    lines: ["Armand a menti. Il manque encore quelque chose. Une preuve. Une arme peut-être.","Cherchez. Elle est quelque part dans cette maison."],
   obj:'Trouvez la dernière carte.',
   mj:null
 };
 PC.firmin_final = {
-  title:'Le témoignage final',
-  lines:["Un as de pique. Froid. Définitif.","Firmin vous voit rapporter la carte. Son visage se décompose."],
+  title:"L'arme du crime",
+  lines:["Un pique. Froid. Définitif.","Firmin vous voit rapporter le pique. Son visage se décompose."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
-    "Je… j'aurais dû parler plus tôt.","---",
-    "J'étais dans le couloir. J'ai entendu. La porte du bureau. Des voix. Puis plus rien.",
-    "Et M. Armand qui ressortait seul. Avec cette carte dans la poche.","---",
-    "Béatrice n'est pas partie. Elle ne partira plus jamais.",
-    "**Ce soir, M. Armand a mis fin à vingt ans de secrets.**"
+    "Vous l'avez trouvé","---",
+      "Le soir ou c'est arrivé, j'étais dans ma chambre.",
+      "Dans le couloir qui mène a la salle de bain j'ai entendu des voix. Puis plus rien.",
+      "Le lendemain, je ne me suis jamais reveillé",
+      "J'ai passé tant d'année à chercher. À chercher la vérité. La preuve de la vérité.", "---",
+      "**Reconstituer la vériter !**", 
   ]}
 };
 PC.chronologie = {title:'Reconstituez les faits',lines:["Vous rassemblez tout ce que vous savez."],obj:'Reconstituez la chronologie des événements.',mj:null};
 PC.accusation = {title:'Qui a tué Béatrice ?',lines:["Le moment est venu. Vous avez toutes les pièces du puzzle."],obj:'Désignez le coupable.',mj:null};
 PC.end = {title:'Épilogue',lines:[],obj:'',mj:null};
 
-CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES CARREAU', lines:[
-  "Ancien valet de la famille Carreau.",
-  "Très serviable.",
-  "Très stressé.",
-  "Très mauvais pour raconter une histoire dans l'ordre.",
-  "<em>Il parle peu sauf si on le paie…</em>",
+CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES DE CARREAU', lines:[
+  "Ancien valet de la famille DE CARREAU.",
+  "Très serviable mais très stressé.</em>",
 ]};
+CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
 CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
   "Mari de Béatrice DE CARREAU.",
   "Très attaché à l'argent.",
   "<em>Encore plus attaché à l'argent des autres.</em>",
 ]};
-CARD_REVEAL.Qd   = {title:'La lettre de Béatrice',  lines:["Elle savait qu'elle était en danger. Elle a quand même avancé."]};
-CARD_REVEAL.Ah   = {title:'Un coeur sans vie',       lines:["L'as de coeur, planté dans un vase brisé. Un symbole ou une menace."]};
+CARD_REVEAL.Qd   = {title:'La lettre de Béatrice',  lines:["Elle savait qu'elle était en danger."]};
+CARD_REVEAL.Ah   = {title:'Un coeur sans vie',       lines:["Il est congelé, ça glace le sang non !?"]};
 CARD_REVEAL['8h']= {title:'La feuille aux mille plis', lines:["Quelqu'un avait caché ce symbole avec soin !"]};
-CARD_REVEAL['10d']={title:'Cinq années de silence',  lines:["Armand a tout consigné. Les dates. Les montants. Comme s'il voulait être prêt pour un procès."]};
-CARD_REVEAL.As   = {title:"L'arme de la vérité",     lines:["L'as de pique. Firmin le reconnaît. Il était dans la poche d'Armand ce soir-là."]};
+CARD_REVEAL['10d']={title:'Cinq années de silence',  lines:["Armand a tout consigné. Les dates. Les montants."]};
+CARD_REVEAL.As   = {title:"L'arme de la vérité",     lines:["L'as de pique. Le pique de la cheminée."]};
 CARD_REVEAL['2c']= {title:'Deux trèfles',  lines:["Une pièce à l'effigie d'un trèfle. Valeur : 2."]};
 CARD_REVEAL['3c']= {title:'Trois trèfles', lines:["Trois pièces à trèfle. Valeur : 3."]};
 CARD_REVEAL['4c']= {title:'Quatre trèfles',lines:["Une petite liasse. Valeur : 4."]};
 CARD_REVEAL['5c']= {title:'Cinq trèfles', lines:["Un lot soigneusement emballé. Valeur : 5."]};
 CARD_REVEAL['6c']= {title:'Six trèfles',  lines:["La plus grande trouvaille. Valeur : 6."]};
-CARD_REVEAL['7s']= {title:'Empreinte suspecte', lines:["Un sept de pique avec une empreinte digitale partielle.","Elle ne correspond à personne dans la maison.","<em>Fausse piste.</em>"]};
+CARD_REVEAL['7s']= {title:'Empreinte suspecte', lines:["Un sept de pique, avec une empreinte digitale partielle.","Elle ne correspond à personne dans la maison.","<em>Fausse piste.</em>"]};
 CARD_REVEAL.Jh   = {title:'Un message anonyme', lines:["Un valet de coeur avec des mots écrits à l'encre rouge.","Les initiales ne correspondent à aucun suspect.","<em>Fausse piste.</em>"]};
 
 // =============================================================
@@ -546,7 +541,7 @@ function buildPhaseSpecific() {
     h+=`<div class="card" id="bpuzzle">
       <div class="section-title">Feuille pliée</div>
       <div id="bp1">
-        <p class="narrative" style="margin-bottom:16px">Pliez ce papier, Armand DE CARREAU n'aurait pas aimé cela !</p>
+        <p class="narrative" style="margin-bottom:16px">Pliez ce papier !</p>
         <button class="btn btn-dark" onclick="bpFolded()">J'ai plié la feuille</button>
       </div>
       <div id="bp2" style="display:none">
