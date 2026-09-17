@@ -189,9 +189,9 @@ PC.firmin_testimony = {
   ]}
 };
 PC.find_qd = {
-  title:'Le jardin',
-  lines:["Le jardin est plongé dans l'obscurité. Derrière le rosier, à demi enfouie sous des feuilles mortes, une carte."],
-  obj:'Trouvez la carte dans le jardin.',
+  title:'Madame DE CARREAU',
+  lines:["Frimin vous a donné des informations, c'etait chère payé, mais il y avait des éléments intéressants..."],
+  obj:'Retrouver Beatrice de CARREAU !',
   mj:null
 };
 PC.beatrice_reveal = {
