@@ -621,26 +621,32 @@ function buildInventaire() {
     {id:'Jh', s:'heart',  r:'V', lbl:'Message',      cat:'f'},
   ];
   function card(item) {
-    const found=G.discovered.includes(item.id);
     const isRed=item.s==='diamond'||item.s==='heart';
     const sym=SUITS[item.s].symbol;
-    return `<div class="inv-card ${found?'found':'locked'}">
-      ${found
-        ?`<div class="inv-card-sym ${isRed?'red':'black'}">${item.r}${sym}</div><div class="inv-card-lbl">${item.lbl}</div>`
-        :`<div class="inv-card-sym" style="color:var(--border-strong)">?</div><div class="inv-card-lbl">????</div>`
-      }
+    return `<div class="inv-card found">
+      <div class="inv-card-sym ${isRed?'red':'black'}">${item.r}${sym}</div>
+      <div class="inv-card-lbl">${item.lbl}</div>
     </div>`;
   }
   function grp(cat,title) {
-    return `<div style="margin-bottom:24px"><div class="section-title">${title}</div><div class="inv-grid">${ITEMS.filter(i=>i.cat===cat).map(card).join('')}</div></div>`;
+    const foundItems = ITEMS.filter(i=>i.cat===cat && G.discovered.includes(i.id));
+    if (!foundItems.length) return '';
+    return `<div style="margin-bottom:24px"><div class="section-title">${title}</div><div class="inv-grid">${foundItems.map(card).join('')}</div></div>`;
+  }
+  const content = `${grp('p','Personnages')}${grp('e','Preuves')}${grp('f','Fausses pistes')}`;
+  if (!content.trim()) {
+    return `<div class="pad">
+      <h2 style="font-family:var(--font-serif);font-size:1.6rem;margin-bottom:20px">Inventaire</h2>
+      <div class="locked-notice">
+        <div class="big">🎴</div>
+        <h2>Inventaire vide</h2>
+        <p>Aucune carte ou preuve n'a encore été trouvée.</p>
+      </div>
+    </div>`;
   }
   return `<div class="pad">
     <h2 style="font-family:var(--font-serif);font-size:1.6rem;margin-bottom:20px">Inventaire</h2>
-    ${grp('p','Personnages')} ${grp('e','Preuves')} ${grp('f','Fausses pistes')}
-    <div class="section-title">Zones autorisées</div>
-    <div class="zone-tag active"><span>🏠</span><span class="zone-tag-name">Maison</span><span class="zone-badge">AUTORISE</span></div>
-    <div class="zone-tag ${G.gardenOpen?'active':''}"><span>🌿</span><span class="zone-tag-name">Jardin</span>${G.gardenOpen?'<span class="zone-badge">AUTORISE</span>':''}</div>
-    <div class="zone-tag ${G.bureauOpen?'active':''}"><span>✒️</span><span class="zone-tag-name">Bureau</span>${G.bureauOpen?'<span class="zone-badge">AUTORISE</span>':''}</div>
+    ${content}
   </div>`;
 }
 
