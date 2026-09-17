@@ -175,11 +175,17 @@ PC.firmin_testimony = {
   lines:["Firmin soupèse l'argent dans sa main. Il vous regarde. Il se décide."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
-    "Mme. Béatrice DE CARREAU savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
-    "Il y a des années, Armand a détourné l'argent d'une succession. La mère de Béatrice était l'héritière.",
-    "Béatrice a découvert les documents il y a six mois. Elle le faisait chanter, discrètement.","---",
-    "Mais ce soir… je crois qu'il en a eu assez.",
-    "Dans le jardin — vous pouvez y aller maintenant — il y a quelque chose que vous devriez voir."
+    "Madame avait découvert qu'Armand lui prenait de l'argent.",
+    "Pas beaucoup à chaque fois.",
+    "Mais depuis longtemps.", "---",
+    "C'est impressionnant comme une petite quantité devient énorme quand on la répète pendant des années.",
+    "C'est comme les moustiques, la quanité de sang qu'ils ont du me prendre ceux-là !"; "---",
+    "Mais je m'égare.",
+    "Madame adorait les fleurs. Elle passait beaucoup de temps dans le jardin",
+    "Moi, je n'ai jamais vraiment compris.",
+    "Pour moi, si ça ne se mange pas, ça ne sert à rien.",
+    "Les framboises, par exemple, ça sent bon, c'est joli mais surtot ça se mange !",
+    "Voilà une fleur que je respecte.",
   ]}
 };
 PC.find_qd = {

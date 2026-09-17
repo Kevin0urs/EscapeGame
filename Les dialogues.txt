@@ -1,0 +1,51 @@
+
+  title:'Firmin, Valet des DE CARREAU',
+"Ah ! Vous voilà enfin.",
+    "Je suis Firmin, le valet des DE CARREAU.",
+    "---",
+    "Vous savez, Dame DE CARREAU était beaucoup plus intelligente que Monsieur.",
+    "Monsieur était persuadé du contraire.",
+    "C'était assez amusant.",
+    "Enfin, pour Madame. Pas pour Monsieur.",
+    "---",
+    "Un soir, Madame m'a demandé de récupérer quelque chose que Monsieur cachait.",
+    "Et je sais où il avait l'habitude de cacher ses affaires.",
+    "Dans ses chaussures.",
+    "Enfin… pas toutes ses affaires.",
+    "**Mais suffisamment pour que ça vaille le coup de regarder.**"
+
+  title:'Armand DE CARREAU',
+"Ah… Vous avez trouvé les deux trèfles de Madame.",
+    "Enfin… MES deux trèfles, je veux dire.",
+    "Je… ne pensais pas que quelqu'un regarderait ici.",
+    "---",
+    "Enfin, peu importe. Vous pouvez les garder.",
+    "**Mais écoutez-moi bien : ne cherchez rien d'autre ici !**",
+
+  title:'Ce que sait Firmin',
+"Mme. Béatrice DE CARREAU savait des choses sur M. Armand DE CARREAU. Des choses qu'il voulait tenir secrètes.","---",
+    "Il y a des années, Armand a détourné l'argent d'une succession. La mère de Béatrice était l'héritière.",
+    "Béatrice a découvert les documents il y a six mois. Elle le faisait chanter, discrètement.","---",
+    "Mais ce soir… je crois qu'il en a eu assez.",
+    "Dans le jardin — vous pouvez y aller maintenant — il y a quelque chose que vous devriez voir."
+
+  title:'La dame DE CARREAU',
+"Si vous lisez ceci, c'est qu'il est trop tard pour moi.","---",
+    "J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu.",
+    "Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.","---",
+    "Ce soir il m'a dit que c'était fini. Qu'il avait quelque chose pour moi dans le bureau.",
+    "**Je n'aurais pas dû y aller seule.**"
+
+'Les comptes'
+  "Vous avez tout trouvé, à ce que je vois.","---",
+    "Oui. Béatrice me faisait chanter. J'ai payé. Pendant cinq ans, j'ai payé.",
+    "Ce soir, je lui ai proposé un accord final. Elle viendrait dans le bureau. Je lui donnerais tout ce que je lui devais.","---",
+    "Mais elle n'est pas venue. Elle a pris peur et elle est partie.",
+    "**Je ne sais pas où elle est. Je vous le jure.**"
+
+  title:'Le témoignage final',
+ "Je… j'aurais dû parler plus tôt.","---",
+    "J'étais dans le couloir. J'ai entendu. La porte du bureau. Des voix. Puis plus rien.",
+    "Et M. Armand qui ressortait seul. Avec cette carte dans la poche.","---",
+    "Béatrice n'est pas partie. Elle ne partira plus jamais.",
+    "**Ce soir, M. Armand a mis fin à vingt ans de secrets.**"
