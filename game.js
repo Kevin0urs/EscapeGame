@@ -37,9 +37,9 @@ const CHAPTERS = {
   intro:{n:1,t:'Une soirée ordinaire'}, firmin_intro:{n:1,t:'Une soirée ordinaire'},
   find_kd:{n:1,t:'Une soirée ordinaire'}, armand_reveal:{n:2,t:'Le maître des lieux'},
   currency_puzzle:{n:2,t:'Le maître des lieux'}, find_clubs:{n:2,t:'Le maître des lieux'},
-  firmin_testimony:{n:2,t:'Le maître des lieux'}, find_qd:{n:3,t:'La Madame DE CARREAU'},
-  beatrice_reveal:{n:3,t:'La Madame DE CARREAU'}, find_ah:{n:3,t:'La Madame DE CARREAU'},
-  find_8h:{n:3,t:'La Madame DE CARREAU'}, bureau_puzzle:{n:4,t:'Ce que cache le bureau'},
+  firmin_testimony:{n:2,t:'Le maître des lieux'}, find_qd:{n:3,t:'Madame DE CARREAU'},
+  beatrice_reveal:{n:3,t:'Madame DE CARREAU'}, find_ah:{n:3,t:'Madame DE CARREAU'},
+  find_8h:{n:3,t:'Madame DE CARREAU'}, bureau_puzzle:{n:4,t:'Ce que cache le bureau'},
   find_10d:{n:4,t:'Ce que cache le bureau'}, comptes_reveal:{n:4,t:'Ce que cache le bureau'},
   find_as:{n:4,t:'Ce que cache le bureau'}, firmin_final:{n:5,t:'La vérité'},
   chronologie:{n:5,t:'La vérité'}, accusation:{n:5,t:'La vérité'}, end:{n:5,t:'Épilogue'},
@@ -463,6 +463,7 @@ function buildEnquete() {
 }
 
 function buildPhaseSpecific() {
+  let h = '';
 
   if (G.phase === 'beatrice_reveal') {
     if (!showBeatriceLetter) {
@@ -473,7 +474,7 @@ function buildPhaseSpecific() {
     } else {
       h += `
         <div class="card" style="border-left:4px solid var(--gold);margin-top:12px;animation:slideUp 0.3s ease">
-          <div class="section-title">Lettre au dos de la carte</div>
+          <div class="section-title">Lettre de Béatrice</div>
           <div class="narrative" style="font-style:italic">
             <p>« J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu. »</p>
             <p>« Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce. »</p>
@@ -488,8 +489,6 @@ function buildPhaseSpecific() {
     }
     return h;
   }
-
-  let h='';
   if (G.phase==='currency_puzzle') {
     h+=`<div class="card" id="cpuzzle">
       <div class="section-title">Enigme monnaie</div>
