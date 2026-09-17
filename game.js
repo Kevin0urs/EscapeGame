@@ -48,13 +48,13 @@ const CHAPTERS = {
 const PC = {}; // PHASE_CONTENT — rempli dans part2
 const CARD_REVEAL = {}; // rempli dans part2
 const CHRONO_EVENTS = [
-  { id:'A',label:"Béatrice découvre les vols",correct:1},
-  { id: 'B', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
-  { id: 'C', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
-  { id: 'D', label: "Armand détourne l'argent de sa femmee", correct: 0 },
-  { id: 'E', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
-  { id: 'F', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
-  { id: 'G', label: "Armand paie pendant cinq mois", correct: 3 },
+  { id:'X',label:"Béatrice découvre les vols",correct:1},
+  { id: 'X', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
+  { id: 'X', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
+  { id: 'X', label: "Armand détourne l'argent de sa femmee", correct: 0 },
+  { id: 'X', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
+  { id: 'X', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
+  { id: 'X', label: "Armand paie pendant cinq mois", correct: 3 },
 ];
 
 const DOSSIER = [
@@ -62,12 +62,13 @@ const DOSSIER = [
   {id: 'suspect1', k: 'Armand DE CARREAU', v: "Maître des lieux. Aime l'argent, un peu trop", phase:'armand_reveal'},
   {id:'temoin',   k:'Firmin',               v:"Valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
   {id:'vol',      k:'Le vol',               v:"Armand volait sa femme depuis des années.", phase:'firmin_testimony'},
-  {id:'jardin',   k:'Le jardin',            v:"Firmin vous y a envoyé. Une lettre y était cachée.", phase:'find_qd'},
+  {id:'jardin',   k:'Le jardin',            v:"Firmin vous y a envoyé.", phase:'find_qd'},
   {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique de vérifer la chambre froide et précise qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
-  {id:'pliage',   k:'La Feuille pliée',     v:"Révèle le mot BUREAU quand on la plie correctement.", phase:'bureau_puzzle'},
+  {id: 'Coeur', k: "Un coeur congelé",      v: "Béatrice avait préparer un coeur et du sang pour simuler une scéne de crime", phase:'find_ah'},
+  {id: 'pliage', k: 'La Feuille pliée',     v: "Révèle le mot BUREAU quand on la plie correctement.", phase: 'comptes_reveal' },
   {id:'comptes',  k:"Le relevé d'Armand",   v:"Des années de vol soigneusement documentés.", phase:'comptes_reveal'},
   {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice pour un accord.", phase:'comptes_reveal'},
-  {id:'as',       k:"L'as de pique",        v:"Le pique de la cheminée, trouvé dans la salle de bain. Firmin l'a vu dans la maison le soir du drmame.", phase:'firmin_final'},
+  {id:'as',       k:"L'as de pique",        v:"Le pique de la cheminée, trouvé dans la salle de bain. Firmin l'a vu dans la maison le soir du drame.", phase:'firmin_final'},
   {id:'fp7s', k:'Empreinte — fausse piste', v:"L'empreinte sur le 7 de pique ne correspond à aucun suspect.", phase:'never', rh:'7s'},
 ];
 
