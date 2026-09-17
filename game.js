@@ -37,9 +37,9 @@ const CHAPTERS = {
   intro:{n:1,t:'Une soirée ordinaire'}, firmin_intro:{n:1,t:'Une soirée ordinaire'},
   find_kd:{n:1,t:'Une soirée ordinaire'}, armand_reveal:{n:2,t:'Le maître des lieux'},
   currency_puzzle:{n:2,t:'Le maître des lieux'}, find_clubs:{n:2,t:'Le maître des lieux'},
-  firmin_testimony:{n:2,t:'Le maître des lieux'}, find_qd:{n:3,t:'La bonne de maison'},
-  beatrice_reveal:{n:3,t:'La bonne de maison'}, find_ah:{n:3,t:'La bonne de maison'},
-  find_8h:{n:3,t:'La bonne de maison'}, bureau_puzzle:{n:4,t:'Ce que cache le bureau'},
+  firmin_testimony:{n:2,t:'Le maître des lieux'}, find_qd:{n:3,t:'La Madame DE CARREAU'},
+  beatrice_reveal:{n:3,t:'La Madame DE CARREAU'}, find_ah:{n:3,t:'La Madame DE CARREAU'},
+  find_8h:{n:3,t:'La Madame DE CARREAU'}, bureau_puzzle:{n:4,t:'Ce que cache le bureau'},
   find_10d:{n:4,t:'Ce que cache le bureau'}, comptes_reveal:{n:4,t:'Ce que cache le bureau'},
   find_as:{n:4,t:'Ce que cache le bureau'}, firmin_final:{n:5,t:'La vérité'},
   chronologie:{n:5,t:'La vérité'}, accusation:{n:5,t:'La vérité'}, end:{n:5,t:'Épilogue'},
@@ -125,8 +125,9 @@ PC.firmin_intro = {
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Ah ! Vous voilà enfin.",
-    "Je suis Firmin, le valet des DE CARREAU.",
-    "Enfin son fantôme...",
+    "Je suis Firmin, le valet des DE CARREAU. ",
+    "Enfin je fue, mainenant je suis son fantôme...",
+    "Rassurez vous, je suis le seul ici.",
     "---",
     "Vous savez, Dame DE CARREAU était beaucoup plus intelligente que Monsieur.",
     "Monsieur était persuadé du contraire.",
@@ -134,7 +135,7 @@ PC.firmin_intro = {
     "Enfin, pour Madame. Pas pour Monsieur.",
     "---",
     "Un soir, Madame m'a demandé de récupérer quelque chose que Monsieur cachait.",
-    "Et je sais où il avait l'habitude de cacher ses affaires.",
+    "Et je savais où il avait l'habitude de cacher ses affaires.",
     "Dans ses chaussures.",
     "Enfin… pas toutes ses affaires.",
     "**Mais suffisamment pour que ça vaille le coup de regarder.**",
@@ -148,16 +149,14 @@ PC.find_kd = {
 };
 PC.armand_reveal = {
   title:'Armand DE CARREAU',
-  lines:["Armand semble avoir quelque chose à dire."],
+    lines: ["Firmin semble avoir quelque chose à dire."],
   obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Armand',emoji:'🎩',lines:[
-    "Ah… Vous avez trouvé les deux trèfles de Madame.",
-    "Enfin… MES deux trèfles, je veux dire.",
-    "Je… ne pensais pas que quelqu'un regarderait ici.",
+  mj:{name:'Firmin',emoji:'🤵',lines:[
+    "Ah… Vous avez trouvé deux trèfles de Madame DE CARREAU.",
+    "Enfin… de Monsieur DE CARREAU... théoriquement",
+    "Il ne pensait pas que quelqu'un regarderait ici.",
     "---",
-    "Enfin, peu importe. Vous pouvez les garder.",
-    "Je n'en n'ai plus vraiment l'utilié depuis que je suis décédé...",
-    "**Mais écoutez-moi bien : ne cherchez rien d'autre ici !**",
+    "Enfin, peu importe. Trouvez en plus, Trouvez les tous, les 20 !",
   ]}
 };
 PC.currency_puzzle = {
@@ -186,7 +185,7 @@ PC.firmin_testimony = {
     "Madame adorait les fleurs. Elle passait beaucoup de temps dans le jardin",
     "Moi, je n'ai jamais vraiment compris.",
     "Pour moi, si ça ne se mange pas, ça ne sert à rien.",
-    "Les framboises, par exemple, ça sent bon, c'est joli mais surtot ça se mange !",
+    "Les framboises aussi ça sent bon, mais surtout ça se mange.",
     "Voilà une fleur que je respecte.",
   ]}
 };
@@ -197,16 +196,10 @@ PC.find_qd = {
   mj:null
 };
 PC.beatrice_reveal = {
-  title:'La dame DE CARREAU',
+  title:'La Dame DE CARREAU',
   lines:["Une dame de carreau. Mais c'est la lettre au dos qui vous arrête, griffonnée à la hâte."],
-  obj:'Allez voir le Maître du Jeu.',
-  mj:{name:'Béatrice',emoji:'🤵',lines:[
-    "Si vous lisez ceci, c'est qu'il est trop tard pour moi.","---",
-    "J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu.",
-    "Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.","---",
-    "Ce soir il m'a dit que c'était fini. Qu'il avait quelque chose pour moi dans le bureau.",
-    "**Je n'aurais pas dû y aller seule.**"
-  ]}
+  obj:'',
+  mj:null
 };
 PC.find_ah = {
   title:'La piste du bureau',
@@ -394,6 +387,7 @@ function solveAccusation() { G.phase='end'; G.solved.push('accusation'); saveGam
 // =============================================================
 
 let currentTab = 'enquete';
+let showBeatriceLetter = false;
 let logoTaps = 0, logoTimer = null;
 let selectedSuit = null, selectedRank = null;
 let chronoAnswer = [], shuffledChrono = [];
@@ -469,6 +463,32 @@ function buildEnquete() {
 }
 
 function buildPhaseSpecific() {
+
+  if (G.phase === 'beatrice_reveal') {
+    if (!showBeatriceLetter) {
+      h += `
+        <div style="padding:0 16px 16px;text-align:center">
+          <button class="btn btn-gold" onclick="readBeatriceLetter()">Lire la Lettre</button>
+        </div>`;
+    } else {
+      h += `
+        <div class="card" style="border-left:4px solid var(--gold);margin-top:12px;animation:slideUp 0.3s ease">
+          <div class="section-title">Lettre au dos de la carte</div>
+          <div class="narrative" style="font-style:italic">
+            <p>« J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu. »</p>
+            <p>« Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce. »</p>
+            <p>« Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer. »</p>
+            <p>« Alors je vais faire croire à ma mort et m'enfuir. »</p>
+            <p style="font-weight:bold;color:var(--crimson)">« Tout est dans le frigo ! Si il est vide c'est que j'ai réussi ! »</p>
+          </div>
+        </div>
+        <div style="padding:0 16px 16px">
+          <button class="btn btn-dark" onclick="finishBeatriceLetter()">Continuer l'enquête</button>
+        </div>`;
+    }
+    return h;
+  }
+
   let h='';
   if (G.phase==='currency_puzzle') {
     h+=`<div class="card" id="cpuzzle">
@@ -664,6 +684,19 @@ function buildDossier() {
     ${rev.length?'<div class="section-title" style="margin-top:20px">Révélations</div>'+ents(rev):''}
     ${leads.length?'<div class="section-title" style="margin-top:20px">Pistes</div>'+ents(leads,'lead'):''}
   </div>`;
+}
+
+
+function readBeatriceLetter() {
+  showBeatriceLetter = true;
+  render();
+}
+
+function finishBeatriceLetter() {
+  showBeatriceLetter = false;
+  G.phase = 'find_ah';
+  saveGame();
+  render();
 }
 
 // =============================================================
