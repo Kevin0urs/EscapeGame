@@ -480,7 +480,7 @@ function buildPhaseSpecific() {
             <p>Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.</p>
             <p>Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer.</p>
             <p>Alors je vais faire croire à ma mort et m'enfuir. »</p>
-            <p style="font-weight:bold;color:var(--crimson)">Tout est dans la chambre froide! Si il est vide c'est que j'ai réussi !</p>
+            <p style="font-weight:bold;color:var(--crimson)">Au moment où j'écris ces lignes tout est quasiment prêt dans la chambre froide! Si elle est vide c'est que j'ai réussi !</p>
             <p>  - Béatrice - </p>
           </div>
         </div>
