@@ -476,11 +476,12 @@ function buildPhaseSpecific() {
         <div class="card" style="border-left:4px solid var(--gold);margin-top:12px;animation:slideUp 0.3s ease">
           <div class="section-title">Lettre de Béatrice</div>
           <div class="narrative" style="font-style:italic">
-            <p>« J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu. »</p>
-            <p>« Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce. »</p>
-            <p>« Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer. »</p>
-            <p>« Alors je vais faire croire à ma mort et m'enfuir. »</p>
-            <p style="font-weight:bold;color:var(--crimson)">« Tout est dans le frigo ! Si il est vide c'est que j'ai réussi ! »</p>
+            <p>J'ai passé vingt ans dans cette maison. J'ai tout vu. Tout tu.</p>
+            <p>Armand m'a volé mon héritage. J'ai voulu reprendre ce qui m'appartenait, pièce par pièce.</p>
+            <p>Mais j'ai compris qu'Armand ne s'arrêterait pas à me voler, bientôt il allait tenter de me tuer.</p>
+            <p>Alors je vais faire croire à ma mort et m'enfuir. »</p>
+            <p style="font-weight:bold;color:var(--crimson)">Tout est dans le frigo ! Si il est vide c'est que j'ai réussi !</p>
+            <p>  - Béatrice - </p>
           </div>
         </div>
         <div style="padding:0 16px 16px">
