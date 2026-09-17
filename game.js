@@ -51,7 +51,7 @@ const CHRONO_EVENTS = [
   { id:'A',label:"Béatrice découvre les vols",correct:1},
   { id: 'B', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
   { id: 'C', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
-  { id: 'D', label: "Armand détourne l'héritage de sa femmee", correct: 0 },
+  { id: 'D', label: "Armand détourne l'argent de sa femmee", correct: 0 },
   { id: 'E', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
   { id: 'F', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
   { id: 'G', label: "Armand paie pendant cinq mois", correct: 3 },
@@ -82,7 +82,7 @@ const END_LINES = [
   "J'avais une mission : Faire éclater la véritée.",
   "À présent je peux quitter votre monde et rejoidnre celui qui m'attend !",
   "---",
-  "Merci à vous.",
+  "Merci à vous.","---",
   "— Firmin ancien valet DE CARREAU, pour toujours gardien de la maison",
 ];
 
@@ -228,31 +228,31 @@ PC.comptes_reveal = {
   lines:["Un dix de carreau. Et au dos, un relevé minutieux : les sommes volées à Béatrice","Mois après mois","Année par année.","Mais aux dates les plus récentes on y voit des sommes rendues à Béatrice DE CARREAU !"],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Frimin',emoji:'🤵',lines:[
-    "Vous trouvé les comptes de Monsieur, à ce que je vois.","---",
+    "Vous avez trouvé les comptes de Monsieur, à ce que je vois.","---",
     "Oui. Béatrice l'avait confronté et le faisait chanter pour récupérer son argent. Monsieur a payé. Pendant cinq mois.",
-    "Mais il supporter de moins en mois cela, il la supportait de moins en moins...","---",
-    "Un soir il m'a dit qu'il allait lui proposé un accord final. Il lui donnerait tout ce qu'il lui devait.","---",
-    "Le lendemain j'ai appris qu'elle n'est pas venue. Elle a pris peur et elle est partie.",
-    "**Il me l'a juré, mais il m'a surement menti...**"
+    "Mais il supportait de moins en mois cela... et il la supportait de moins en moins...","---",
+    "Un soir il m'a dit qu'il allait lui proposé un accord final. Qu'il lui donnerait tout ce qu'il lui devait.","---",
+    "Le soir ou c'est arrivé, j'étais dans ma chambre.",
+    "Dans le couloir qui mène a la salle de bain j'ai entendu des voix. Puis plus rien.",
+    "Le lendemain, je ne me suis jamais reveillé",
+    "Il a déclaré le lendemain qu'elle était partie faire une nouvelle vie.",
+    "**Il l'a juré, et il a convaincu les enquêteurs mais il m'a surement menti...**"
   ]}
 };
 PC.find_as = {
   title:'La dernière carte',
-    lines: ["Armand a menti. Il manque encore quelque chose. Une preuve. Une arme peut-être.","Cherchez. Elle est quelque part dans cette maison."],
+    lines: ["Armand a menti. Il manque encore quelque chose. Une preuve. Une arme peut-être.","Cherchez. Elle est quelque part !"],
   obj:'Trouvez la dernière carte.',
   mj:null
 };
 PC.firmin_final = {
   title:"L'arme du crime",
-  lines:["Un pique. Froid. Définitif.","Firmin vous voit rapporter le pique. Son visage se décompose."],
+  lines:["Le pique pour attiser les bûches de la cheminée. Il est froid, il est définitif.","Firmin vous voit rapporter le pique. Son visage se décompose."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Vous l'avez trouvé","---",
-      "Le soir ou c'est arrivé, j'étais dans ma chambre.",
-      "Dans le couloir qui mène a la salle de bain j'ai entendu des voix. Puis plus rien.",
-      "Le lendemain, je ne me suis jamais reveillé",
-      "J'ai passé tant d'année à chercher. À chercher la vérité. La preuve de la vérité.", "---",
-      "**Reconstituer la vériter !**", 
+    "J'ai passé tant d'année à chercher. À chercher la vérité. Les preuves de la vérité.", "---",
+    "**À reconstituer la vériter !**", 
   ]}
 };
 PC.chronologie = {title:'Reconstituez les faits',lines:["Vous rassemblez tout ce que vous savez."],obj:'Reconstituez la chronologie des événements.',mj:null};
@@ -862,7 +862,7 @@ function showEndScreen(){
     else { linesHTML+=`<div class="end-line" style="animation-delay:${delay}ms">${line}</div>`; delay+=250; }
   });
   scr.innerHTML=`
-    <div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;animation:fadeIn .8s ease">Message de Béatrice de Carreau</div>
+    <div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;animation:fadeIn .8s ease">Message de Firmin</div>
     <div class="end-letter">${linesHTML}</div>
     <div class="end-fin" style="animation:slideUp .8s ${delay}ms ease both">FIN</div>
     <button class="btn btn-ghost" style="color:rgba(245,240,232,.4);border-color:rgba(245,240,232,.15);max-width:240px;animation:fadeIn .6s ${delay+600}ms ease both" onclick="goHome()">Retour à l'accueil</button>`;
