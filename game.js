@@ -126,6 +126,7 @@ PC.firmin_intro = {
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Ah ! Vous voilà enfin.",
     "Je suis Firmin, le valet des DE CARREAU.",
+    "Enfin son fantôme...",
     "---",
     "Vous savez, Dame DE CARREAU était beaucoup plus intelligente que Monsieur.",
     "Monsieur était persuadé du contraire.",
@@ -155,6 +156,7 @@ PC.armand_reveal = {
     "Je… ne pensais pas que quelqu'un regarderait ici.",
     "---",
     "Enfin, peu importe. Vous pouvez les garder.",
+    "Je n'en n'ai plus vraiment l'utilié depuis que je suis décédé...",
     "**Mais écoutez-moi bien : ne cherchez rien d'autre ici !**",
   ]}
 };
@@ -190,8 +192,8 @@ PC.firmin_testimony = {
 };
 PC.find_qd = {
   title:'Madame DE CARREAU',
-  lines:["Frimin vous a donné des informations, c'etait chère payé, mais il y avait des éléments intéressants..."],
-  obj:'Retrouver Beatrice de CARREAU !',
+  lines:["Frimin vous a donné des informations, c'etait cher payé, mais il y avait des éléments intéressants..."],
+  obj:'Retrouvez Beatrice de CARREAU !',
   mj:null
 };
 PC.beatrice_reveal = {
@@ -351,9 +353,7 @@ function discoverCard(cardId) {
   G.mjDone = false;
   if (phaseIdx(G.phase) >= phaseIdx('find_qd')) G.gardenOpen = true;
   if (phaseIdx(G.phase) >= phaseIdx('bureau_puzzle')) G.bureauOpen = true;
-  // Avec le Roi de Carreau, le 2 de trèfle est physiquement caché ensemble
-  if (cardId === 'Kd' && !G.clubs.includes('2c')) {
-    G.clubs.push('2c');
+  if (cardId === 'Kd') {
     G.walletVisible = true;
   }
   saveGame(); checkEarlyCards();
