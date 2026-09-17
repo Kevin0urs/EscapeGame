@@ -10,9 +10,9 @@ const SUITS = {
 };
 
 const CARDS = {
-  Jd:   { suit:'diamond', rank:'J',  type:'main',     label:'Firmin',        requiredPhase:'intro',    revealPhase:'firmin_intro' },
-  Kd:   { suit:'diamond', rank:'K',  type:'main',     label:'Armand',        requiredPhase:'find_kd',  revealPhase:'armand_reveal' },
-  Qd:   { suit:'diamond', rank:'Q',  type:'main',     label:'Beatrice',      requiredPhase:'find_qd',  revealPhase:'beatrice_reveal' },
+  Jd:   { suit:'diamond', rank:'V',  type:'main',     label:'Firmin',        requiredPhase:'intro',    revealPhase:'firmin_intro' },
+  Kd:   { suit:'diamond', rank:'R',  type:'main',     label:'Armand',        requiredPhase:'find_kd',  revealPhase:'armand_reveal' },
+  Qd:   { suit:'diamond', rank:'D',  type:'main',     label:'Beatrice',      requiredPhase:'find_qd',  revealPhase:'beatrice_reveal' },
   Ah:   { suit:'heart',   rank:'A',  type:'main',     label:'Faux coeur',    requiredPhase:'find_ah',  revealPhase:'find_8h' },
   '8h': { suit:'heart',   rank:'8',  type:'main',     label:'Carte pliee',   requiredPhase:'find_8h',  revealPhase:'bureau_puzzle' },
   '10d':{ suit:'diamond', rank:'10', type:'main',     label:'Comptes',       requiredPhase:'find_10d', revealPhase:'comptes_reveal' },
@@ -23,7 +23,7 @@ const CARDS = {
   '5c': { suit:'club', rank:'5', type:'currency', value:5 },
   '6c': { suit:'club', rank:'6', type:'currency', value:6 },
   '7s': { suit:'spade', rank:'7', type:'redHerring', label:'Empreinte' },
-  Jh:   { suit:'heart',  rank:'J', type:'redHerring', label:'Message' },
+  Jh:   { suit:'heart',  rank:'V', type:'redHerring', label:'Message' },
 };
 
 const PHASE_ORDER = [
@@ -92,16 +92,16 @@ const END_LINES = [
 ];
 
 const SETUP = [
-  {c:'J\u2666 Valet de Carreau', l:'Dans le salon, posé en évidence (table basse, cheminée).'},
-  {c:'K\u2666 Roi de Carreau',   l:"Dans la chambre d'Armand, sur le bureau ou dans un tiroir."},
-  {c:'Q\u2666 Dame de Carreau',  l:'Dans le jardin (pot de fleur, sous une pierre, près d\'un rosier).'},
+  {c:'V\u2666 Valet de Carreau', l:'Dans le salon, posé en évidence (table basse, cheminée).'},
+  {c:'R\u2666 Roi de Carreau',   l:"Dans la chambre d'Armand, sur le bureau ou dans un tiroir."},
+  {c:'D\u2666 Dame de Carreau',  l:'Dans le jardin (pot de fleur, sous une pierre, près d\'un rosier).'},
   {c:'A\u2665 As de Coeur',      l:'Dans la cuisine ou près d\'un vase brisé.'},
   {c:'8\u2665 Huit de Coeur',    l:'Sur une table, pré-pliée pour que le mot BUREAU apparaisse.'},
   {c:'10\u2666 Dix de Carreau',  l:'Dans le bureau, sur le sous-main ou dans un classeur.'},
   {c:'A\u2660 As de Pique',      l:'Dans un couloir ou près d\'une entrée.'},
   {c:'2\u2663 à 6\u2663 Trèfles',l:'Cachés partout : sous des vases, derrière des livres, dans des chaussures.'},
   {c:'7\u2660 Sept de Pique',    l:'Facilement visible — fausse piste intentionnelle.'},
-  {c:'J\u2665 Valet de Coeur',   l:'Facilement visible — fausse piste intentionnelle.'},
+  {c:'V\u2665 Valet de Coeur',   l:'Facilement visible — fausse piste intentionnelle.'},
 ];
 // =============================================================
 // CONTENU NARRATIF (PC + CARD_REVEAL)
@@ -307,7 +307,7 @@ function clubBalance(){ const v={'2c':2,'3c':3,'4c':4,'5c':5,'6c':6}; return G.c
 function phaseIdx(p){ return PHASE_ORDER.indexOf(p); }
 function hasMJSpeech(){ return PC[G.phase]&&PC[G.phase].mj&&!G.mjDone; }
 function getExpectedCard(){
-  const m={intro:'J\u2666',find_kd:'K\u2666',find_qd:'Q\u2666',find_ah:'A\u2665',find_8h:'8\u2665',find_10d:'10\u2666',find_as:'A\u2660'};
+  const m={intro:'V\u2666',find_kd:'R\u2666',find_qd:'D\u2666',find_ah:'A\u2665',find_8h:'8\u2665',find_10d:'10\u2666',find_as:'A\u2660'};
   return m[G.phase]||null;
 }
 
@@ -615,15 +615,15 @@ function buildAccusation() {
 
 function buildInventaire() {
   const ITEMS=[
-    {id:'Jd', s:'diamond',r:'J', lbl:'Firmin',       cat:'p'},
-    {id:'Kd', s:'diamond',r:'K', lbl:'Armand',       cat:'p'},
-    {id:'Qd', s:'diamond',r:'Q', lbl:'Beatrice',     cat:'p'},
+    {id:'Jd', s:'diamond',r:'V', lbl:'Firmin',       cat:'p'},
+    {id:'Kd', s:'diamond',r:'R', lbl:'Armand',       cat:'p'},
+    {id:'Qd', s:'diamond',r:'D', lbl:'Beatrice',     cat:'p'},
     {id:'Ah', s:'heart',  r:'A', lbl:'Faux coeur',   cat:'e'},
     {id:'8h', s:'heart',  r:'8', lbl:'Carte pliee',  cat:'e'},
     {id:'10d',s:'diamond',r:'10',lbl:'Comptes',      cat:'e'},
     {id:'As', s:'spade',  r:'A', lbl:"L'arme",       cat:'e'},
     {id:'7s', s:'spade',  r:'7', lbl:'Empreinte',    cat:'f'},
-    {id:'Jh', s:'heart',  r:'J', lbl:'Message',      cat:'f'},
+    {id:'Jh', s:'heart',  r:'V', lbl:'Message',      cat:'f'},
   ];
   function card(item) {
     const found=G.discovered.includes(item.id);
@@ -765,7 +765,7 @@ function goCardInput(){
 
 function renderCardInput(){
   const SUITS_ORDER=['diamond','heart','spade','club'];
-  const RANKS=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+  const RANKS=['A','2','3','4','5','6','7','8','9','10','V','D','R'];
   document.getElementById('suit-grid').innerHTML=SUITS_ORDER.map(s=>{
     const isRed=s==='diamond'||s==='heart';
     return `<button class="suit-btn ${selectedSuit===s?'selected':''}" onclick="selSuit('${s}')">
