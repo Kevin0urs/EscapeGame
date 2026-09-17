@@ -83,8 +83,8 @@ const END_LINES = [
   "J'avais une mission : Faire éclater la véritée.",
   "À présent je peux quitter votre monde et rejoidnre celui qui m'attend !",
   "---",
-  "Merci à vous.","---",
-  "— Firmin, Ancien valet DE CARREAU, pour toujours Gardien de la maison",
+  "Merci !","---",
+  "— Firmin -, Ancien valet DE CARREAU, pour toujours Gardien de la maison",
 ];
 
 const SETUP = [
