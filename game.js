@@ -382,8 +382,8 @@ function completeMJSpeech() {
 
 function solveCurrencyPuzzle() { G.currencyId=true; G.walletVisible=true; G.phase='find_clubs'; saveGame(); }
 function payFirmin() {
-  if (clubBalance()<5) return false;
-  G.spent+=5; G.phase='firmin_testimony'; G.mjDone=false; saveGame(); return true;
+  if (clubBalance()<20) return false;
+  G.spent+=20; G.phase='firmin_testimony'; G.mjDone=false; saveGame(); return true;
 }
 function solveBureau() { G.bureauOpen=true; G.phase='find_10d'; G.solved.push('bureau'); saveGame(); }
 function solveChronologie() { G.phase='accusation'; G.solved.push('chrono'); saveGame(); }
@@ -497,10 +497,10 @@ function buildPhaseSpecific() {
   }
 
   if (G.phase==='find_clubs') {
-    const bal=clubBalance(), canPay=bal>=5;
+    const bal=clubBalance(), canPay=bal>=20;
     h+=`<div class="card">
       <div class="section-title">Interroger Firmin</div>
-      <p style="font-size:1.4rem;font-weight:bold;margin-bottom:16px">Coût : 5 ♣</p>
+      <p style="font-size:1.4rem;font-weight:bold;margin-bottom:16px">Coût : 20 ♣</p>
       <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--paper-dark);border-radius:var(--radius-sm);margin-bottom:16px">
         <span style="font-size:2rem">♣</span>
         <div>
@@ -509,8 +509,8 @@ function buildPhaseSpecific() {
         </div>
       </div>
       ${canPay
-        ?'<button class="btn btn-gold" onclick="doPay()">Payer 5 ♣</button>'
-        :`<p style="color:var(--crimson);font-style:italic;margin-bottom:12px;font-size:.9rem">Il vous manque ${5-bal} trèfle${5-bal!==1?'s':''}.</p>
+        ?'<button class="btn btn-gold" onclick="doPay()">Payer 20 ♣</button>'
+        :`<p style="color:var(--crimson);font-style:italic;margin-bottom:12px;font-size:.9rem">Il vous manque ${20-bal} trèfle${20-bal!==1?'s':''}.</p>
           <button class="btn btn-outline" onclick="goCardInput()">♣ Ajouter une carte</button>`
       }
     </div>`;
