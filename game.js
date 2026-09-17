@@ -264,7 +264,6 @@ CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES DE CARREAU', lines:[
   "Très serviable mais très stressé.</em>",
 ]};
 CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
-CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
   "Mari de Béatrice DE CARREAU.",
   "Très attaché à l'argent.",
   "<em>Encore plus attaché à l'argent des autres.</em>",
