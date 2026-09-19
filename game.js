@@ -59,13 +59,13 @@ const CHRONO_EVENTS = [
 
 const DOSSIER = [
   {id:'victime',  k:'Béatrice DE CARREAU',  v:"Femme d'Armand de CARREAU, Disparue le 17 janvier 1958. A vécu 20 ans dans la maison.", phase:'intro'},
-  {id: 'suspect1',k: 'Armand DE CARREAU',   v:"Ancien Maître des lieux. Aime l'argent, peut-être un peu trop", phase:'armand_reveal'},
-  {id:'temoin',   k:'Firmin',               v:"Ancien Valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
+  {id: 'suspect1',k: 'Armand DE CARREAU',   v:"Ancien maître des lieux. Aime l'argent, peut-être un peu trop", phase:'armand_reveal'},
+  {id:'temoin',   k:'Firmin',               v:"Ancien valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
   {id:'vol',      k:'Le vol',               v:"Armand volait sa femme depuis des années.", phase:'firmin_testimony'},
   {id:'jardin',   k:'Le jardin',            v:"Firmin vous y a envoyé.", phase:'find_qd'},
   {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique de vérifer la chambre froide et précise qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
-  {id: 'Coeur', k: "Un coeur congelé",      v: "Béatrice avait préparer un coeur et du sang pour simuler une scéne de crime", phase:'find_ah'},
-  {id: 'pliage', k: 'La Feuille pliée',     v: "Révèle le mot BUREAU quand on la plie correctement.", phase: 'comptes_reveal' },
+  {id:'Coeur', k: "Un coeur congelé",      v: "Béatrice avait préparer un coeur et du sang pour simuler une scéne de crime", phase:'find_ah'},
+  {id:'pliage', k: 'La Feuille pliée',     v: "Révèle le mot BUREAU quand on la plie correctement.", phase: 'comptes_reveal' },
   {id:'comptes',  k:"Le relevé d'Armand",   v:"Des années de vol soigneusement documentés.", phase:'comptes_reveal'},
   {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice pour un accord.", phase:'comptes_reveal'},
   {id:'as',       k:"L'as de pique",        v:"Le pique de la cheminée, trouvé dans la salle de bain. Firmin l'a vu dans la maison le soir du drame.", phase:'firmin_final'},
@@ -108,13 +108,13 @@ PC.intro = {
   lines:[
     "Vous arrivez dans un ancien manoir alors que la nuit commence déjà à tomber.",
     "C'est une soirée calme, fraîche, presque ordinaire.",
-    "En reveanche, avant de venir on vous a prévenu.","Ce manoir est hanté.", "",
-    "Sur la table du salon vous découvrez un dossier, il est inscrit dessus :",
-    "<strong>DOSSIER DE CARREAU - 1958 - RESOLU</strong>",
+    "En reveanche, avant de venir on vous a prévenu.","Ce manoir est hanté par un fantôme.",
+    "Sur la table du salon vous découvrez un dossier, il est inscrit dessus :"," ",
+    "<strong>1958 - DOSSIER DE CARREAU - - RESOLU</strong>",
     "— Disparition : Béatrice DE CARREAU, femme d'Arnamd DE CARREAU","",
     "Le dossier est quasiement vide, vous pouvez le consulter via l'application",
   ],
-  obj:"PREMIÈRE MISSION — Retrouvez le fantôme du manoir.Il est quelque part dans cette pièce !",
+  obj:"PREMIÈRE MISSION — Retrouvez le fantôme du manoir. Il est quelque part dans cette pièce !",
   mj:null
 };
 PC.firmin_intro = {
@@ -263,17 +263,19 @@ PC.chronologie = {title:'Reconstituez les faits',lines:["Vous rassemblez tout ce
 PC.accusation = {title:'Qui a tué Béatrice ?',lines:["Le moment est venu. Vous avez toutes les pièces du puzzle."],obj:'Désignez le coupable.',mj:null};
 PC.end = {title:'Épilogue',lines:[],obj:'',mj:null};
 
-CARD_REVEAL.Jd   = {title:'FIRMIN', lines:[
-  "Ancien valet de la famille DE CARREAU.",
-  "Très serviable mais très stressé.</em>",
+CARD_REVEAL.Jd   = {title:'FIRMIN, le Fantôme', lines:[
+  "Nouvelle pièce du dossier !",
+  "Firmin est l'ancien Valet de la famille DE CARREAU.",
+  "<em>Aujourd'hui, Très serviable mais très stressé.</em>",
 ]};
 CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
+  "Nouvelle Pièce du dossier !",
   "Mari de Béatrice DE CARREAU.",
   "Très attaché à l'argent.",
   "<em>Encore plus attaché à l'argent des autres.</em>",
 ]};
-CARD_REVEAL.Qd   = {title:'La lettre de Béatrice',  lines:["Elle savait qu'elle était en danger."]};
-CARD_REVEAL.Ah   = {title:'Un coeur sans vie',       lines:["Il est congelé, ça glace le sang non !?"]};
+CARD_REVEAL.Qd = { title: 'La lettre de Béatrice', lines: ["Nouvelle pièce du dossier !","Elle savait qu'elle était en danger."]};
+CARD_REVEAL.Ah = { title: 'Un coeur sans vie', lines: ["Nouvelle pièce du dossier !","Il est congelé, ça glace le sang non !?"]};
 CARD_REVEAL['8h']= {title:'La feuille aux mille plis', lines:["Quelqu'un avait caché ce symbole avec soin !"]};
 CARD_REVEAL['10d']={title:'Cinq années de silence',  lines:["Armand a tout consigné. Les dates. Les montants."]};
 CARD_REVEAL.As   = {title:"L'arme de la vérité",     lines:["L'as de pique. Le pique de la cheminée."]};
