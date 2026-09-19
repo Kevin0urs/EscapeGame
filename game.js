@@ -489,7 +489,7 @@ function buildPhaseSpecific() {
             <p>Si elle ne l'est pas, sachez que mon mari Armand déteste les bateaux...</p>
             <p>  - Béatrice - </p>
           </div>
-        </div>c'est que j'ai réussi !</p>
+        </div>
         <div style="padding:0 16px 16px">
           <button class="btn btn-dark" onclick="finishBeatriceLetter()">Continuer l'enquête</button>
         </div>`;
