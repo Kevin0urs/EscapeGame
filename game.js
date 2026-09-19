@@ -49,12 +49,12 @@ const PC = {}; // PHASE_CONTENT — rempli dans part2
 const CARD_REVEAL = {}; // rempli dans part2
 const CHRONO_EVENTS = [
   { id: 'A',label:"Béatrice découvre les vols",correct:1},
-  { id: 'B', label: "Firmin le valet devient fantôme jusqu'à ce que la vérité soit révéllée", correct: 6 },
+  { id: 'B', label: "Firmin le valet, également assasiné afin de créer un alibi, devient fantôme", correct: 6 },
   { id: 'C', label: "Béatrice par peur prépare sa fuite.", correct: 4 },
   { id: 'D', label: "Armand détourne l'argent de sa femme", correct: 0 },
-  { id: 'E', label: "Armand anticipe et l'élimine sa femme et son Valet", correct: 5 },
+  { id: 'E', label: "Armand anticipe et élimine sa femme et son Valet", correct: 5 },
   { id: 'F', label: "Béatrice exige d'être remboursée des trèfles volés", correct: 2 },
-  { id: 'G', label: "Armand paie pendant cinq mois", correct: 3 },
+  { id: 'G', label: "Armand paie pendant cinq mois, à contre coeur...", correct: 3 },
 ];
 
 const DOSSIER = [
@@ -228,7 +228,8 @@ PC.find_10d = {
 };
 PC.comptes_reveal = {
   title:'Les comptes',
-  lines:["Un dix de carreau. Et au dos, un relevé minutieux : les sommes volées à Béatrice","Mois après mois","Année par année.","Mais aux dates les plus récentes on y voit des sommes rendues à Béatrice DE CARREAU !"],
+  lines:["Un dix de carreau. Et au dos, un relevé minutieux. ", 
+  "Il corresond aux sommes volées à Béatrice","Mois après mois, année par année.","Cependant aux dates les plus récentes, vous voyez des sommes rendues à Béatrice DE CARREAU !"],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Frimin',emoji:'🤵',lines:[
     "Vous avez trouvé les comptes de Monsieur, à ce que je vois.","---",
@@ -237,24 +238,24 @@ PC.comptes_reveal = {
     "Un soir il m'a dit qu'il allait lui proposé un accord final. Qu'il lui donnerait tout ce qu'il lui devait.","---",
     "Le soir ou c'est arrivé, j'étais dans ma chambre.",
     "Dans le couloir qui mène a la salle de bain j'ai entendu des voix. Puis plus rien.",
-    "Le lendemain, je ne me suis jamais reveillé",
-    "Il a déclaré le lendemain qu'elle était partie faire une nouvelle vie.",
-    "**Il l'a juré, et il a convaincu les enquêteurs mais il m'a surement menti...**"
+    "Le lendemain, je ne me suis jamais reveillé...", "---",
+    "Fraichement devenu fantôme, j'étais là lorsqu'il a déclaré aux enquêteurs que Madame et MOI étions partis faire une nouvelle vie ensemble",
+    "**Il a réussi à convaincre les enquêteurs mais il m'a menti...**",
   ]}
 };
 PC.find_as = {
   title:'La dernière carte',
-    lines: ["Armand a menti. Il manque encore quelque chose. Une preuve. Une arme peut-être.","Cherchez. Elle est quelque part !"],
+    lines: ["Armand a menti. Il manque encore quelque chose. Une preuve. L'arme du crime ! ","Cherchez. Elle est quelque part !"],
   obj:'Trouvez la dernière carte.',
   mj:null
 };
 PC.firmin_final = {
   title:"L'arme du crime",
-  lines:["Le pique pour attiser les bûches de la cheminée. Il est froid, il est définitif.","Firmin vous voit rapporter le pique. Son visage se décompose."],
+  lines:["Le pique pour attiser les bûches de la cheminée. Il est froid, il a été définitif.","Firmin vous voit rapporter le pique. Son visage se décompose."],
   obj:'Allez voir le Maître du Jeu.',
   mj:{name:'Firmin',emoji:'🤵',lines:[
     "Vous l'avez trouvé","---",
-    "J'ai passé tant d'année à chercher. À chercher la vérité. Les preuves de la vérité.", "---",
+    "J'ai passé tant d'année à chercher.","À chercher la vérité.","Les preuves de la vérité.", "---",
     "**À reconstituer la vériter !**", 
   ]}
 };
@@ -482,7 +483,7 @@ function buildPhaseSpecific() {
             <p>Alors je vais faire croire à ma mort et m'enfuir.</p>
             <p>Au moment où j'écris ces lignes tout est quasiment prêt dans la chambre froide!</p>
             <p style="font-weight:bold;color:var(--crimson)"> Si elle est vide c'est que j'ai réussi !</p>
-            <p>Si elle ne l'est pas, sachez que mon mari Armand déteste les bateaux!" </p>
+            <p>Si elle ne l'est pas, sachez que mon mari Armand déteste les bateaux..." </p>
             <p>  - Béatrice - </p>
           </div>
         </div>
