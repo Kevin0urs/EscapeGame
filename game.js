@@ -58,9 +58,9 @@ const CHRONO_EVENTS = [
 ];
 
 const DOSSIER = [
-  {id:'victime',  k:'Béatrice DE CARREAU',  v:"Victime: Dame DE CARREAU ayant vécu 20 ans dans la maison.", phase:'intro'},
-  {id: 'suspect1', k: 'Armand DE CARREAU', v: "Maître des lieux. Aime l'argent, un peu trop", phase:'armand_reveal'},
-  {id:'temoin',   k:'Firmin',               v:"Valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
+  {id:'victime',  k:'Béatrice DE CARREAU',  v:"Femme d'Armand de CARREAU, Disparue le 17 janvier 1958. A vécu 20 ans dans la maison.", phase:'intro'},
+  {id: 'suspect1',k: 'Armand DE CARREAU',   v:"Ancien Maître des lieux. Aime l'argent, peut-être un peu trop", phase:'armand_reveal'},
+  {id:'temoin',   k:'Firmin',               v:"Ancien Valet des DE CARREAU, aujourd'hui fantôme. Vous guide dans l'enquête", phase:'firmin_intro'},
   {id:'vol',      k:'Le vol',               v:"Armand volait sa femme depuis des années.", phase:'firmin_testimony'},
   {id:'jardin',   k:'Le jardin',            v:"Firmin vous y a envoyé.", phase:'find_qd'},
   {id:'lettre',   k:"La lettre de Béatrice",v:"Écrite précipitamment, elle indique de vérifer la chambre froide et précise qu'Armand n'aime pas les bateaux", phase:'beatrice_reveal'},
@@ -104,15 +104,17 @@ const SETUP = [
 // =============================================================
 
 PC.intro = {
-  title:'Dossier Carreau',
+  title:'Le Dossier DE CARREAU',
   lines:[
     "Vous arrivez dans un ancien manoir alors que la nuit commence déjà à tomber.",
-    "Une soirée calme, fraîche, presque ordinaire.",
-    "Sur la table du salon vous attend un dossier que personne ne semble vouloir ouvrir.",
-    "<strong>DOSSIER CARREAU</strong>",
-    "— Affaire non résolue.<br>— Victime présumée : Béatrice DE CARREAU<br>— Dernier employé connu : Firmin, le valet des DE CARREAU",
+    "C'est une soirée calme, fraîche, presque ordinaire.",
+    "En reveanche, avant de venir on vous a prévenu.","Ce manoir est hanté.", "",
+    "Sur la table du salon vous découvrez un dossier, il est inscrit dessus :",
+    "<strong>DOSSIER DE CARREAU - 1958 - RESOLU</strong>",
+    "— Disparition : Béatrice DE CARREAU, femme d'Arnamd DE CARREAU","",
+    "Le dossier est quasiement vide, vous pouvez le consulter via l'application",
   ],
-  obj:"PREMIÈRE MISSION — Retrouvez Firmin, le Valet de la famille. Il est quelque part dans cette pièce !",
+  obj:"PREMIÈRE MISSION — Retrouvez le fantôme du manoir.Il est quelque part dans cette pièce !",
   mj:null
 };
 PC.firmin_intro = {
