@@ -69,7 +69,8 @@ const DOSSIER = [
   {id:'comptes',  k:"Le relevé d'Armand",   v:"Des années de vol soigneusement documentés.", phase:'comptes_reveal'},
   {id:'accord',   k:"L'accord final",       v:"Armand a convoqué Béatrice pour un accord.", phase:'comptes_reveal'},
   {id:'as',       k:"L'as de pique",        v:"Le pique de la cheminée, trouvé dans la salle de bain. Firmin l'a vu dans la maison le soir du drame.", phase:'firmin_final'},
-  {id:'fp7s', k:'Empreinte — fausse piste', v:"L'empreinte sur le 7 de pique ne correspond à aucun suspect.", phase:'never', rh:'7s'},
+  {id: 'fp7s', k: 'Empreinte — fausse piste', v: "L'empreinte sur le 7 de pique ne correspond à aucun suspect.", phase: 'never', rh: '7s' },
+  {id: 'fpJh', k: 'Message anonyme — fausse piste', v: "Le message sur le valet de coeur reste non élucidé.", phase: 'never', rh: 'Jh' },
 ];
 
 const END_LINES = [
@@ -95,7 +96,7 @@ const SETUP = [
   {c:'8\u2665 Huit de Coeur',    l:"Faire un bateau en papier écrire '8♥ - BUREAU' sur les plis, dépliez le papier et froissez le un peu, puis mettre la papier au congélateur avec l'As de ♥"},
   {c:'10\u2666 Dix de Carreau',  l:'Dans le bureau, sur le sous-main ou dans un classeur.'},
   {c:'A\u2660 As de Pique',      l:'Dans dans la salle de bain (dans une serviette ou sous un gel douche)'},
-  {c:'2\u2663 à 6\u2663 Trèfles',l:'Cachés partout : sous des vases, derrière des livres, dans des chaussures.'},
+  {c:'2\u2663 à 6\u2663 Trèfles',l:'Cachés partout dans le pièce principale: sous des vases, derrière des livres, dans des chaussures...'},
   {c:'7\u2660 Sept de Pique',    l:'Facilement visible — fausse piste intentionnelle.'},
   {c:'V\u2665 Valet de Coeur',   l:'Facilement visible — fausse piste intentionnelle.'},
 ];
