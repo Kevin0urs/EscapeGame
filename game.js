@@ -125,7 +125,7 @@ PC.firmin_intro = {
     "Ah ! Vous voilà enfin.",
     "Je suis Firmin, le valet des DE CARREAU. ",
     "Enfin je fue, mainenant je suis son fantôme...",
-    "Rassurez vous, je suis le seul ici.",
+    "Rassurez vous, je suis le seul fantôme ici.",
     "---",
     "Vous savez, Dame DE CARREAU était beaucoup plus intelligente que Monsieur.",
     "Monsieur était persuadé du contraire.",
@@ -262,7 +262,7 @@ PC.chronologie = {title:'Reconstituez les faits',lines:["Vous rassemblez tout ce
 PC.accusation = {title:'Qui a tué Béatrice ?',lines:["Le moment est venu. Vous avez toutes les pièces du puzzle."],obj:'Désignez le coupable.',mj:null};
 PC.end = {title:'Épilogue',lines:[],obj:'',mj:null};
 
-CARD_REVEAL.Jd   = {title:'FIRMIN, VALET DES DE CARREAU', lines:[
+CARD_REVEAL.Jd   = {title:'FIRMIN', lines:[
   "Ancien valet de la famille DE CARREAU.",
   "Très serviable mais très stressé.</em>",
 ]};
