@@ -209,10 +209,9 @@ PC.find_ah = {
 PC.find_8h = {
   title:"La chambre froide n'est pas vide !",
   lines: ["Vous avez trouvé un coeur et du sang congelé !", 
-      "Entre nous, cela ne semble pas être un cœur humain, mais il aurait parfaitement pu servir à créer une scène de crime !",
-      "Vous avez également trouvé un papier qui semble avoir été plié et replié de nombreuses fois.",
-      "Comme si on voulait qu'il révèle quelque chose."],
-  obj:'Trouvez le symbole caché.',
+  "Entre nous, cela ne semble pas être un cœur humain, mais il aurait parfaitement pu servir à créer une scène de crime !",
+  "Une enveloppe se trouve à proximité ouvrez la !"],
+  obj:"Ouvrez l'enveloppe",
   mj:null
 };
 PC.bureau_puzzle = {
