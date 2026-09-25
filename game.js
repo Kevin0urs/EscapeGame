@@ -111,7 +111,7 @@ PC.intro = {
     "C'est une soirée calme, fraîche, presque ordinaire.",
     "En reveanche, avant de venir on vous a prévenu.","Ce manoir est hanté par un fantôme.",
     "Sur la table du salon vous découvrez un dossier, il est inscrit dessus :"," ",
-    "<strong>1958 - DOSSIER DE CARREAU - - RESOLU</strong>",
+    "<strong>1958 - DOSSIER DE CARREAU - RESOLU</strong>",
     "— Disparition : Béatrice DE CARREAU, femme d'Armand DE CARREAU","",
     "Le dossier est quasiement vide, vous pouvez le consulter via l'application",
   ],
@@ -166,8 +166,8 @@ PC.currency_puzzle = {
 };
 PC.find_clubs = {
   title:'Les trèfles de la maison',
-  lines:["Ces trèfles sont la monnaie que Firmin accepte. Son témoignage a un prix.","Continuez à chercher dans toute la maison."],
-  obj:'Rassemblez des trèfles, puis payez Firmin pour son témoignage.',
+  lines:["Ces trèfles sont de la monnaie.","Continuez à chercher dans toute la pièce !"],
+  obj:'Rassemblez 20 trèfles, puis allez voir Firmin .',
   mj:null
 };
 PC.firmin_testimony = {
