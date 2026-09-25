@@ -276,7 +276,7 @@ CARD_REVEAL.Kd   = {title:'ARMAND DE CARREAU', lines:[
 ]};
 CARD_REVEAL.Qd = { title: 'La lettre de Béatrice', lines: ["Nouvelle pièce du dossier !","Elle savait qu'elle était en danger."]};
 CARD_REVEAL.Ah = { title: 'Un coeur sans vie', lines: ["Nouvelle pièce du dossier !","Il est congelé, ça glace le sang non ?"]};
-CARD_REVEAL['8h']= {title:'La feuille aux mille plis', lines:["Quelqu'un avait caché ce symbole avec soin !"]};
+CARD_REVEAL['8h']= {title:'La feuille aux mille plis', lines:["Quelqu'un avait caché cette carte avec soin !"]};
 CARD_REVEAL['10d']={title:'Cinq années de silence',  lines:["Armand a tout consigné. Les dates. Les montants."]};
 CARD_REVEAL.As   = {title:"L'arme de la vérité",     lines:["L'as de pique. Le pique de la cheminée."]};
 CARD_REVEAL['2c']= {title:'Deux trèfles',  lines:["Une pièce à l'effigie d'un trèfle. Valeur : 2."]};
